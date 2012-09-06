@@ -1,0 +1,10 @@
+#foreach ( $Player in $playersInfo)
+## this is for the Football quarterback stat
+#if ($Player.typeCode.equals("q"))  
+<player type="$Player.typeCode" id="$Player.playerId" comp="$Player.passCompletions" att="$Player.passAttempts" yards="$Player.passingYards" tds="$Player.noOfTouchDowns" int="$Player.interceptions" score="$Player.fantasyPoints" highrank="$Player.isHighRank()" rank="$Player.ranking"/>
+#end
+## this is for the Football runningback stat
+#if ($Player.typeCode.equals("r"))  
+<player type="$Player.typeCode" id="$Player.playerId" rushes="$Player.rushAttempts" yards="$Player.rushYards" tds="$Player.noOfTouchDowns" score="$Player.fantasyPoints" highrank="$Player.isHighRank()" rank="$Player.ranking"/>
+#end
+#end
