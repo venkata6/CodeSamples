@@ -1,0 +1,20 @@
+Here I provide my algorithm of BP in vectorized form:
+
+1 - Let's training samples (x1,y1),...,(xm,ym)
+
+2- Set activation of first layer as a1=x
+
+3- Compute activation of al, for l=2,...,L-1,L
+
+4- Compute δL=aL−y.
+
+5- Compute δl=(Θl)Tδl+1.∗al.∗(1−al), for l=L-1,L-2,...,3,2
+
+6- Set Δl:=δl+1(al)T
+
+7- Set Dl:=1mΔl for bias terms.
+
+8- Set Dl:=1mΔl+λmΘl for all terms except bias terms
+
+
+

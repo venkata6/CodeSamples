@@ -1,0 +1,178 @@
+function [J grad] = nnCostFunction(nn_params, ...
+                                   input_layer_size, ...
+                                   hidden_layer_size, ...
+                                   num_labels, ...
+                                   X, y, lambda)
+%NNCOSTFUNCTION Implements the neural network cost function for a two layer
+%neural network which performs classification
+%   [J grad] = NNCOSTFUNCTON(nn_params, hidden_layer_size, num_labels, ...
+%   X, y, lambda) computes the cost and gradient of the neural network. The
+%   parameters for the neural network are "unrolled" into the vector
+%   nn_params and need to be converted back into the weight matrices. 
+% 
+%   The returned parameter grad should be a "unrolled" vector of the
+%   partial derivatives of the neural network.
+%
+
+% Reshape nn_params back into the parameters Theta1 and Theta2, the weight matrices
+% for our 2 layer neural network
+
+Theta1 = reshape(nn_params(1:hidden_layer_size * (input_layer_size + 1)), ...
+                 hidden_layer_size, (input_layer_size + 1));
+
+Theta2 = reshape(nn_params((1 + (hidden_layer_size * (input_layer_size + 1))):end), ...
+                 num_labels, (hidden_layer_size + 1));
+
+% Setup some useful variables
+m = size(X, 1);
+         
+% You need to return the following variables correctly 
+J = 0;
+Theta1_grad = zeros(size(Theta1));
+Theta2_grad = zeros(size(Theta2));
+
+% ====================== YOUR CODE HERE ======================
+% Instructions: You should complete the code by working through the
+%               following parts.
+%
+% Part 1: Feedforward the neural network and return the cost in the
+%         variable J. After implementing Part 1, you can verify that your
+%         cost function computation is correct by verifying the cost
+%         computed in ex4.m
+
+X = [ones(m,1) X]; %pad up the bias unit for the input 
+z2 =  X * Theta1';  
+a2 = sigmoid(z2) ;
+
+%now calculate the h(x)
+a2 = [ones(m,1) a2] ; %pad up the activation a(2) 
+z3 = a2 * Theta2' ;
+h=sigmoid(z3) ;  %output h(x) also called a3
+
+t1=log(h);  
+t2=log(1 - h);
+
+y1= (y==1);   % i am creating a output 'y1' which is size(X) by size('num_labels')
+for i=2:num_labels,
+  y1= [ y1 y==i];
+end
+
+J=0;
+J= (-t1.*y1) .- (t2.*(1-y1));  % here i will mutiply 5000 by 10 by 5000 by 10
+J = sum(sum(J))/m ;  %sum twice to get a scalar value
+
+%calculate the regularisation parameter now 
+%we will copy the Theta1 and Theta2 and then blank the first column
+r=0; 
+temp1 = Theta1;
+temp1(:,1)=0;
+temp2 = Theta2;
+temp2(:,1)=0;
+
+%now we will use the temp variable to calculate 'r'
+r=  sum(sum(temp1.*temp1)) + sum(sum(temp2.*temp2));
+r= (r*lambda)/(2*m);
+J=J+r;
+
+%
+% Part 2: Implement the backpropagation algorithm to compute the gradients
+%         Theta1_grad and Theta2_grad. You should return the partial derivatives of
+%         the cost function with respect to Theta1 and Theta2 in Theta1_grad and
+%         Theta2_grad, respectively. After implementing Part 2, you can check
+%         that your implementation is correct by running checkNNGradients
+%
+%         Note: The vector y passed into the function is a vector of labels
+%               containing values from 1..K. You need to map this vector into a 
+%               binary vector of 1's and 0's to be used with the neural network
+%               cost function.
+%
+%         Hint: We recommend implementing backpropagation using a for-loop
+%               over the training examples if you are implementing it for the 
+%               first time.
+%
+% Theta1 - 25 by 401 
+% Theta2 - 10 by 26 
+% 
+
+a3=h;  %activation a3 is same as h(x) calcualed in step 1, we will reuse the values a2, z2 etc as well from step 1
+
+%printf("size of a3 %f %f \n",size(a3));
+
+%calcualte the error term  d3
+%for i=1:m, 
+%  for j=1:num_labels,
+%    d3(i,j) = a3(i,j) - (y(i) == j);   
+%  end;
+%end;
+%printf("size of d3 %f %f \n",size(d3));
+
+%now calculate the error term for hidden unit
+%d2 = Theta2' * d3' .* sigmoidGradient(z2)' ;
+%d2= (Theta2' * d3' ).* (a2 .* (1-a2))'  ;
+
+%d2 = d2(2:end,:);   % i will remove the error for the bias terms 
+%printf("size of d2 %f %f \n",size(d2));
+
+%now calculate the BIG delta's for input layer and hidden unit
+%delta1=delta2=0;
+%delta2= d3' * a2 ; 
+%printf("size of delta2  %f %f \n",size(delta2));
+
+%delta1=  d2 * X ;
+%printf("size of delta1  %f %f \n",size(delta1));
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Calculate the gradients using 'for' loop method 
+
+Theta1T=Theta1';
+a1=X; 
+% a1=[ones(m,1),a1];
+printf("size of a1 %f %f" ,size(a1));
+
+for i=1:size(a1,1),
+   for j=1:size(Theta1T,2),
+       for k=1:size(a1,2),
+	    z2(i,j) += a1(i,k) * Theta1T(k,j);  
+	    %sigmoid();
+       end;
+    end;
+end;
+printf("size of for loop - z2   %f %f \n",size(z2));
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+% Part 3: Implement regularization with the cost function and gradients.
+%
+%         Hint: You can implement this around the code for
+%               backpropagation. That is, you can compute the gradients for
+%               the regularization separately and then add them to Theta1_grad
+%               and Theta2_grad from Part 2.
+%
+
+% -------------------------------------------------------------
+
+% now find the regularisation terms
+% i will use the 'temp' variables from part 1 where i blanked the first column of Theta1 and Theta2
+r1 = (lambda/m) * (temp1) ;
+r2 = (lambda/m) * (temp2) ;
+
+Theta1_grad=delta1/m + r1;
+Theta2_grad=delta2/m + r2;
+
+
+% =========================================================================
+
+% Unroll gradients
+grad = [Theta1_grad(:) ; Theta2_grad(:)];
+
+
+end
+
+
