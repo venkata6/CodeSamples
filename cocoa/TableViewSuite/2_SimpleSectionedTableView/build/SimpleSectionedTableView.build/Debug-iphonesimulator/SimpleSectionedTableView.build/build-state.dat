@@ -1,0 +1,506 @@
+TSimpleSectionedTableView
+v7
+r0
+t314126185.446217
+cCheck dependencies
+cProcessInfoPlistFile /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app/Info.plist Info.plist
+cCopyStringsFile /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app/en.lproj/Localizable.strings en.lproj/Localizable.strings
+cCompileXIB /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/en.lproj/MainWindow.xib
+cCpResource build/Debug-iphonesimulator/SimpleSectionedTableView.app/Default.png images/Default.png
+cCpResource build/Debug-iphonesimulator/SimpleSectionedTableView.app/Icon-72.png images/Icon-72.png
+cCpResource build/Debug-iphonesimulator/SimpleSectionedTableView.app/Icon-Small-50.png images/Icon-Small-50.png
+cCpResource build/Debug-iphonesimulator/SimpleSectionedTableView.app/Icon-Small.png images/Icon-Small.png
+cCpResource build/Debug-iphonesimulator/SimpleSectionedTableView.app/Icon-Small@2x.png images/Icon-Small@2x.png
+cCpResource build/Debug-iphonesimulator/SimpleSectionedTableView.app/Icon.png images/Icon.png
+cCpResource build/Debug-iphonesimulator/SimpleSectionedTableView.app/Icon@2x.png images/Icon@2x.png
+cCpResource build/Debug-iphonesimulator/SimpleSectionedTableView.app/iTunesArtwork images/iTunesArtwork
+cProcessPCH /var/folders/n8/n8QVMtgmFKSsOI5TOhStA++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/SimpleSectionedTableView_Prefix-djjlpcmmttylljgvqgcuczoubyqa/SimpleSectionedTableView_Prefix.pch.gch SimpleSectionedTableView_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/Objects-normal/i386/main.o /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/Objects-normal/i386/SimpleSectionedTableViewAppDelegate.o /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/Classes/SimpleSectionedTableViewAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/Objects-normal/i386/RootViewController.o /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/Classes/RootViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/Objects-normal/i386/Region.o /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/Classes/Region.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/Objects-normal/i386/TimeZoneWrapper.o /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/Classes/TimeZoneWrapper.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app/SimpleSectionedTableView normal i386
+cGenerateDSYMFile /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app.dSYM /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app/SimpleSectionedTableView
+cTouch /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk
+c000000004C494D410000000000000132
+t1279872321
+s306
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004BFDFE39000000000027C7D0
+t1274936889
+s2607056
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004BFDFE7C000000000029D5D0
+t1274936956
+s2741712
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004BFDFE6E0000000000001466
+t1274936942
+s5222
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004C0470BB00000000000009CD
+t1275359419
+s2509
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004C0471620000000001D47210
+t1275359586
+s30700048
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk
+c000000004C6C30170000000000000110
+t1282158615
+s272
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004C5A4DB60000000000295900
+t1280986550
+s2709760
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004C5A4DB0000000000029D580
+t1280986544
+s2741632
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004C5A4DA10000000000001466
+t1280986529
+s5222
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004C6241ED00000000000009CD
+t1281507821
+s2509
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004C6242840000000001E228C0
+t1281507972
+s31598784
+
+N/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/Classes/Region.h
+c000000004C23C3190000000000000AB0
+t1277412121
+s2736
+
+N/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/Classes/Region.m
+c000000004C23C31900000000000014CD
+t1277412121
+s5325
+i"Region.h"
+i"TimeZoneWrapper.h"
+
+N/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/Classes/RootViewController.h
+c000000004C23C3190000000000000A75
+t1277412121
+s2677
+
+N/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/Classes/RootViewController.m
+c000000004C23C3190000000000001369
+t1277412121
+s4969
+i"RootViewController.h"
+i"SimpleSectionedTableViewAppDelegate.h"
+i"Region.h"
+i"TimeZoneWrapper.h"
+
+N/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/Classes/SimpleSectionedTableViewAppDelegate.h
+c000000004C23C3190000000000000B58
+t1277412121
+s2904
+
+N/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/Classes/SimpleSectionedTableViewAppDelegate.m
+c000000004C23C3190000000000000DDC
+t1277412121
+s3548
+i"SimpleSectionedTableViewAppDelegate.h"
+i"RootViewController.h"
+i"Region.h"
+
+N/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/Classes/TimeZoneWrapper.h
+c000000004C23C3190000000000000B08
+t1277412121
+s2824
+
+N/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/Classes/TimeZoneWrapper.m
+c000000004C23C3190000000000000CC3
+t1277412121
+s3267
+i"TimeZoneWrapper.h"
+
+N/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/SimpleSectionedTableView_Prefix.pch
+c000000004A21E53E00000000000000D5
+t1243735358
+s213
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app
+t1292433385
+s476
+
+N/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app.dSYM
+t1292433385
+s102
+
+N/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app/Default.png
+t1292433382
+s2120
+
+N/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app/Icon-72.png
+t1292433382
+s1063
+
+N/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app/Icon-Small-50.png
+t1292433382
+s992
+
+N/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app/Icon-Small.png
+t1292433382
+s918
+
+N/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app/Icon-Small@2x.png
+t1292433382
+s1010
+
+N/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app/Icon.png
+t1292433382
+s1007
+
+N/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app/Icon@2x.png
+t1292433382
+s1252
+
+N/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app/Info.plist
+t1292433382
+s791
+
+N/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app/PkgInfo
+t1292433382
+s8
+
+N/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app/SimpleSectionedTableView
+t1292433385
+s26324
+
+N/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app/en.lproj/Localizable.strings
+t1292433382
+s56
+
+N/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app/en.lproj/MainWindow.nib
+t1292433383
+s977
+
+N/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app/iTunesArtwork
+t1292433382
+s5188
+
+N/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/Objects-normal/i386/Region.o
+t1292433385
+s17732
+
+N/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/Objects-normal/i386/RootViewController.o
+t1292433385
+s41704
+
+N/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/Objects-normal/i386/SimpleSectionedTableView.LinkFileList
+c000000004D08F7E600000000000003C3
+t1292433382
+s963
+
+N/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/Objects-normal/i386/SimpleSectionedTableViewAppDelegate.o
+t1292433385
+s50828
+
+N/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/Objects-normal/i386/TimeZoneWrapper.o
+t1292433385
+s11736
+
+N/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/Objects-normal/i386/main.o
+t1292433385
+s6352
+
+N/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/en.lproj/Localizable.strings
+c000000004A21E53E000000000000003E
+t1243735358
+s62
+
+N/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/en.lproj/MainWindow.xib
+c000000004C17F8D50000000000001D3E
+t1276639445
+s7486
+
+N/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/images/Default.png
+c000000004C238ECC0000000000000848
+t1277398732
+s2120
+
+N/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/images/Icon-72.png
+c000000004C238ECC0000000000000427
+t1277398732
+s1063
+
+N/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/images/Icon-Small-50.png
+c000000004C238ECC00000000000003E0
+t1277398732
+s992
+
+N/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/images/Icon-Small.png
+c000000004C238ECC0000000000000396
+t1277398732
+s918
+
+N/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/images/Icon-Small@2x.png
+c000000004C238ECC00000000000003F2
+t1277398732
+s1010
+
+N/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/images/Icon.png
+c000000004C238ECC00000000000003EF
+t1277398732
+s1007
+
+N/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/images/Icon@2x.png
+c000000004C238ECC00000000000004E4
+t1277398732
+s1252
+
+N/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/images/iTunesArtwork
+c000000004C238ECC0000000000001444
+t1277398732
+s5188
+
+N/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/main.m
+c000000004C23C3190000000000000A66
+t1277412121
+s2662
+
+N/var/folders/n8/n8QVMtgmFKSsOI5TOhStA++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/SimpleSectionedTableView_Prefix-djjlpcmmttylljgvqgcuczoubyqa/SimpleSectionedTableView_Prefix.pch.gch
+t1292433384
+s15232016
+
+N/var/folders/n8/n8QVMtgmFKSsOI5TOhStA++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/SimpleSectionedTableView_Prefix-gvikonsllexpeydpzkymxtunbepf/SimpleSectionedTableView_Prefix.pch.gch
+t2
+s0
+
+NInfo.plist
+c000000004C23A3D30000000000000497
+t1277404115
+s1175
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies314126182#314126182#0(0"0(0#1#0"8625544000#0"0#
+
+CCompileC build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/Objects-normal/i386/Region.o /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/Classes/Region.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s314126185.167721
+e314126185.271062
+r1
+xCompileC
+xbuild/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/Objects-normal/i386/Region.o
+x/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/Classes/Region.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@88"Compile /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/Classes/Region.m314126185#314126185#0(0"0(0#0#80"/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/Classes/Region.m8630214080#2541"    cd /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/SimpleSectionedTableView-generated-files.hmap -I/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/SimpleSectionedTableView-own-target-headers.hmap -I/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/SimpleSectionedTableView-all-target-headers.hmap -iquote /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/SimpleSectionedTableView-project-headers.hmap -F/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator -I/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/include -I/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/DerivedSources/i386 -I/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/DerivedSources -include /var/folders/n8/n8QVMtgmFKSsOI5TOhStA++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/SimpleSectionedTableView_Prefix-djjlpcmmttylljgvqgcuczoubyqa/SimpleSectionedTableView_Prefix.pch -c /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/Classes/Region.m -o /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/Objects-normal/i386/Region.o0#
+
+CCompileC build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/Objects-normal/i386/RootViewController.o /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/Classes/RootViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s314126185.116581
+e314126185.250826
+r1
+xCompileC
+xbuild/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/Objects-normal/i386/RootViewController.o
+x/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/Classes/RootViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@100"Compile /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/Classes/RootViewController.m314126185#314126185#0(0"0(0#0#92"/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/Classes/RootViewController.m8626029792#2565"    cd /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/SimpleSectionedTableView-generated-files.hmap -I/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/SimpleSectionedTableView-own-target-headers.hmap -I/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/SimpleSectionedTableView-all-target-headers.hmap -iquote /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/SimpleSectionedTableView-project-headers.hmap -F/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator -I/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/include -I/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/DerivedSources/i386 -I/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/DerivedSources -include /var/folders/n8/n8QVMtgmFKSsOI5TOhStA++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/SimpleSectionedTableView_Prefix-djjlpcmmttylljgvqgcuczoubyqa/SimpleSectionedTableView_Prefix.pch -c /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/Classes/RootViewController.m -o /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/Objects-normal/i386/RootViewController.o0#
+
+CCompileC build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/Objects-normal/i386/SimpleSectionedTableViewAppDelegate.o /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/Classes/SimpleSectionedTableViewAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s314126185.043959
+e314126185.167616
+r1
+xCompileC
+xbuild/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/Objects-normal/i386/SimpleSectionedTableViewAppDelegate.o
+x/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/Classes/SimpleSectionedTableViewAppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@117"Compile /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/Classes/SimpleSectionedTableViewAppDelegate.m314126185#314126185#0(0"0(0#0#109"/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/Classes/SimpleSectionedTableViewAppDelegate.m8627295904#2599"    cd /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/SimpleSectionedTableView-generated-files.hmap -I/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/SimpleSectionedTableView-own-target-headers.hmap -I/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/SimpleSectionedTableView-all-target-headers.hmap -iquote /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/SimpleSectionedTableView-project-headers.hmap -F/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator -I/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/include -I/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/DerivedSources/i386 -I/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/DerivedSources -include /var/folders/n8/n8QVMtgmFKSsOI5TOhStA++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/SimpleSectionedTableView_Prefix-djjlpcmmttylljgvqgcuczoubyqa/SimpleSectionedTableView_Prefix.pch -c /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/Classes/SimpleSectionedTableViewAppDelegate.m -o /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/Objects-normal/i386/SimpleSectionedTableViewAppDelegate.o0#
+
+CCompileC build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/Objects-normal/i386/TimeZoneWrapper.o /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/Classes/TimeZoneWrapper.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s314126185.250940
+e314126185.315615
+r1
+xCompileC
+xbuild/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/Objects-normal/i386/TimeZoneWrapper.o
+x/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/Classes/TimeZoneWrapper.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@97"Compile /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/Classes/TimeZoneWrapper.m314126185#314126185#0(0"0(0#0#89"/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/Classes/TimeZoneWrapper.m8626708256#2559"    cd /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/SimpleSectionedTableView-generated-files.hmap -I/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/SimpleSectionedTableView-own-target-headers.hmap -I/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/SimpleSectionedTableView-all-target-headers.hmap -iquote /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/SimpleSectionedTableView-project-headers.hmap -F/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator -I/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/include -I/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/DerivedSources/i386 -I/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/DerivedSources -include /var/folders/n8/n8QVMtgmFKSsOI5TOhStA++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/SimpleSectionedTableView_Prefix-djjlpcmmttylljgvqgcuczoubyqa/SimpleSectionedTableView_Prefix.pch -c /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/Classes/TimeZoneWrapper.m -o /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/Objects-normal/i386/TimeZoneWrapper.o0#
+
+CCompileC build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/Objects-normal/i386/main.o /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s314126185.042812
+e314126185.116469
+r1
+xCompileC
+xbuild/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/Objects-normal/i386/main.o
+x/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@78"Compile /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/main.m314126185#314126185#0(0"0(0#0#70"/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/main.m8618756832#2529"    cd /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/SimpleSectionedTableView-generated-files.hmap -I/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/SimpleSectionedTableView-own-target-headers.hmap -I/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/SimpleSectionedTableView-all-target-headers.hmap -iquote /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/SimpleSectionedTableView-project-headers.hmap -F/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator -I/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/include -I/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/DerivedSources/i386 -I/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/DerivedSources -include /var/folders/n8/n8QVMtgmFKSsOI5TOhStA++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/SimpleSectionedTableView_Prefix-djjlpcmmttylljgvqgcuczoubyqa/SimpleSectionedTableView_Prefix.pch -c /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/main.m -o /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/Objects-normal/i386/main.o0#
+
+CCompileXIB /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/en.lproj/MainWindow.xib
+s314126182.657881
+e314126183.151418
+r1
+xCompileXIB
+x/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/en.lproj/MainWindow.xib
+lSLF07#2@34"CompileXIB en.lproj/MainWindow.xib314126182#314126183#0(0"0(0#0#87"/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/en.lproj/MainWindow.xib8628137280#680"    cd /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app/en.lproj/MainWindow.nib /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/en.lproj/MainWindow.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk0#
+
+CCopyStringsFile /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app/en.lproj/Localizable.strings en.lproj/Localizable.strings
+s314126182.635949
+e314126182.824262
+r1
+xCopyStringsFile
+x/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app/en.lproj/Localizable.strings
+xen.lproj/Localizable.strings
+lSLF07#2@33"Copy en.lproj/Localizable.strings314126182#314126182#0(0"0(0#0#92"/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/en.lproj/Localizable.strings8628248768#553"    cd /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView    setenv ICONV /usr/bin/iconv    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings --validate --inputencoding utf-16 --outputencoding binary en.lproj/Localizable.strings --outdir /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app/en.lproj0#
+
+CCpResource build/Debug-iphonesimulator/SimpleSectionedTableView.app/Default.png images/Default.png
+s314126182.824357
+e314126182.856236
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/SimpleSectionedTableView.app/Default.png
+ximages/Default.png
+lSLF07#2@23"Copy images/Default.png314126182#314126182#0(0"0(0#0#82"/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/images/Default.png8627842464#554"    cd /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/images/Default.png /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app0#
+
+CCpResource build/Debug-iphonesimulator/SimpleSectionedTableView.app/Icon-72.png images/Icon-72.png
+s314126182.828472
+e314126182.856383
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/SimpleSectionedTableView.app/Icon-72.png
+ximages/Icon-72.png
+lSLF07#2@23"Copy images/Icon-72.png314126182#314126182#0(0"0(0#0#82"/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/images/Icon-72.png8627675680#554"    cd /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/images/Icon-72.png /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app0#
+
+CCpResource build/Debug-iphonesimulator/SimpleSectionedTableView.app/Icon-Small-50.png images/Icon-Small-50.png
+s314126182.831321
+e314126182.856506
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/SimpleSectionedTableView.app/Icon-Small-50.png
+ximages/Icon-Small-50.png
+lSLF07#2@29"Copy images/Icon-Small-50.png314126182#314126182#0(0"0(0#0#88"/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/images/Icon-Small-50.png8627574208#560"    cd /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/images/Icon-Small-50.png /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app0#
+
+CCpResource build/Debug-iphonesimulator/SimpleSectionedTableView.app/Icon-Small.png images/Icon-Small.png
+s314126182.836062
+e314126182.856626
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/SimpleSectionedTableView.app/Icon-Small.png
+ximages/Icon-Small.png
+lSLF07#2@26"Copy images/Icon-Small.png314126182#314126182#0(0"0(0#0#85"/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/images/Icon-Small.png8627517728#557"    cd /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/images/Icon-Small.png /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app0#
+
+CCpResource build/Debug-iphonesimulator/SimpleSectionedTableView.app/Icon-Small@2x.png images/Icon-Small@2x.png
+s314126182.840358
+e314126182.856737
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/SimpleSectionedTableView.app/Icon-Small@2x.png
+ximages/Icon-Small@2x.png
+lSLF07#2@29"Copy images/Icon-Small@2x.png314126182#314126182#0(0"0(0#0#88"/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/images/Icon-Small@2x.png8627302592#560"    cd /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/images/Icon-Small@2x.png /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app0#
+
+CCpResource build/Debug-iphonesimulator/SimpleSectionedTableView.app/Icon.png images/Icon.png
+s314126182.845931
+e314126182.861798
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/SimpleSectionedTableView.app/Icon.png
+ximages/Icon.png
+lSLF07#2@20"Copy images/Icon.png314126182#314126182#0(0"0(0#0#79"/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/images/Icon.png8627173952#551"    cd /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/images/Icon.png /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app0#
+
+CCpResource build/Debug-iphonesimulator/SimpleSectionedTableView.app/Icon@2x.png images/Icon@2x.png
+s314126182.852077
+e314126182.864824
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/SimpleSectionedTableView.app/Icon@2x.png
+ximages/Icon@2x.png
+lSLF07#2@23"Copy images/Icon@2x.png314126182#314126182#0(0"0(0#0#82"/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/images/Icon@2x.png8626778976#554"    cd /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/images/Icon@2x.png /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app0#
+
+CCpResource build/Debug-iphonesimulator/SimpleSectionedTableView.app/iTunesArtwork images/iTunesArtwork
+s314126182.853877
+e314126182.862781
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/SimpleSectionedTableView.app/iTunesArtwork
+ximages/iTunesArtwork
+lSLF07#2@25"Copy images/iTunesArtwork314126182#314126182#0(0"0(0#0#84"/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/images/iTunesArtwork8626343776#556"    cd /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/images/iTunesArtwork /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app0#
+
+CGenerateDSYMFile /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app.dSYM /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app/SimpleSectionedTableView
+s314126185.392128
+e314126185.442663
+r1
+xGenerateDSYMFile
+x/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app.dSYM
+x/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app/SimpleSectionedTableView
+lSLF07#2@160"GenerateDSYMFile build/Debug-iphonesimulator/SimpleSectionedTableView.app.dSYM build/Debug-iphonesimulator/SimpleSectionedTableView.app/SimpleSectionedTableView314126185#314126185#0(0"0(0#0#145"/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app/SimpleSectionedTableView8610614176#509"    cd /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app/SimpleSectionedTableView -o /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app.dSYM0#
+
+CLd /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app/SimpleSectionedTableView normal i386
+s314126185.315715
+e314126185.392018
+r1
+xLd
+x/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app/SimpleSectionedTableView
+xnormal
+xi386
+lSLF07#2@150"Link /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app/SimpleSectionedTableView314126185#314126185#0(0"0(0#0#0"8625751840#1110"    cd /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -L/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator -F/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator -filelist /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/Objects-normal/i386/SimpleSectionedTableView.LinkFileList -mmacosx-version-min=10.6 -Xlinker -objc_abi_version -Xlinker 2 -framework Foundation -framework UIKit -framework CoreGraphics -o /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app/SimpleSectionedTableView0#
+
+CProcessInfoPlistFile /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app/Info.plist Info.plist
+s314126182.630935
+e314126182.635853
+r1
+xProcessInfoPlistFile
+x/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app/Info.plist
+xInfo.plist
+lSLF07#2@18"Process Info.plist314126182#314126182#0(0"0(0#0#74"/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/Info.plist8628522816#580"    cd /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility Info.plist -genpkginfo /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app/Info.plist0#
+
+CProcessPCH /var/folders/n8/n8QVMtgmFKSsOI5TOhStA++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/SimpleSectionedTableView_Prefix-djjlpcmmttylljgvqgcuczoubyqa/SimpleSectionedTableView_Prefix.pch.gch SimpleSectionedTableView_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s314126183.151540
+e314126185.042666
+r1
+xProcessPCH
+x/var/folders/n8/n8QVMtgmFKSsOI5TOhStA++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/SimpleSectionedTableView_Prefix-djjlpcmmttylljgvqgcuczoubyqa/SimpleSectionedTableView_Prefix.pch.gch
+xSimpleSectionedTableView_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@46"Precompile SimpleSectionedTableView_Prefix.pch314126183#314126185#0(0"0(0#0#99"/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/SimpleSectionedTableView_Prefix.pch8628437056#2379"    cd /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/SimpleSectionedTableView-generated-files.hmap -I/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/SimpleSectionedTableView-own-target-headers.hmap -I/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/SimpleSectionedTableView-all-target-headers.hmap -iquote /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/SimpleSectionedTableView-project-headers.hmap -F/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator -I/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/include -I/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/DerivedSources/i386 -I/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/SimpleSectionedTableView.build/Debug-iphonesimulator/SimpleSectionedTableView.build/DerivedSources -c /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/SimpleSectionedTableView_Prefix.pch -o /var/folders/n8/n8QVMtgmFKSsOI5TOhStA++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/SimpleSectionedTableView_Prefix-djjlpcmmttylljgvqgcuczoubyqa/SimpleSectionedTableView_Prefix.pch.gch0#
+
+CProcessPCH /var/folders/n8/n8QVMtgmFKSsOI5TOhStA++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/SimpleSectionedTableView_Prefix-gvikonsllexpeydpzkymxtunbepf/SimpleSectionedTableView_Prefix.pch.gch SimpleSectionedTableView_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CTouch /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app
+s314126185.442756
+e314126185.446164
+r1
+xTouch
+x/Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app
+lSLF07#2@126"Touch /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app314126185#314126185#0(0"0(0#0#0"8629283968#345"    cd /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/varjunan/cocoa/TableViewSuite/2_SimpleSectionedTableView/build/Debug-iphonesimulator/SimpleSectionedTableView.app0#
+

@@ -1,0 +1,152 @@
+TSimpleTableView
+v7
+r1
+cCheck dependencies
+
+N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Release/SimpleTableView.app
+t2
+s0
+
+N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Release/SimpleTableView.app/Contents/Info.plist
+t2
+s0
+
+N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Release/SimpleTableView.app/Contents/PkgInfo
+t2
+s0
+
+N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Release/SimpleTableView.app/Contents/Resources/Default.png
+t2
+s0
+
+N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Release/SimpleTableView.app/Contents/Resources/Icon-72.png
+t2
+s0
+
+N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Release/SimpleTableView.app/Contents/Resources/Icon-Small-50.png
+t2
+s0
+
+N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Release/SimpleTableView.app/Contents/Resources/Icon-Small.png
+t2
+s0
+
+N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Release/SimpleTableView.app/Contents/Resources/Icon-Small@2x.png
+t2
+s0
+
+N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Release/SimpleTableView.app/Contents/Resources/Icon.png
+t2
+s0
+
+N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Release/SimpleTableView.app/Contents/Resources/Icon@2x.png
+t2
+s0
+
+N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Release/SimpleTableView.app/Contents/Resources/en.lproj/Localizable.strings
+t2
+s0
+
+N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Release/SimpleTableView.app/Contents/Resources/en.lproj/MainWindow.nib
+t2
+s0
+
+N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Release/SimpleTableView.app/Contents/Resources/iTunesArtwork
+t2
+s0
+
+N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/en.lproj/Localizable.strings
+c000000004A21E53E000000000000003E
+t1243735358
+s62
+
+N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/en.lproj/MainWindow.xib
+c000000004C17F8D50000000000001D0F
+t1276639445
+s7439
+
+N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/images/Default.png
+c000000004C238ECC0000000000000848
+t1277398732
+s2120
+
+N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/images/Icon-72.png
+c000000004C238ECC0000000000000427
+t1277398732
+s1063
+
+N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/images/Icon-Small-50.png
+c000000004C238ECC00000000000003E0
+t1277398732
+s992
+
+N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/images/Icon-Small.png
+c000000004C238ECC0000000000000396
+t1277398732
+s918
+
+N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/images/Icon-Small@2x.png
+c000000004C238ECC00000000000003F2
+t1277398732
+s1010
+
+N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/images/Icon.png
+c000000004C238ECC00000000000003EF
+t1277398732
+s1007
+
+N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/images/Icon@2x.png
+c000000004C238ECC00000000000004E4
+t1277398732
+s1252
+
+N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/images/iTunesArtwork
+c000000004C238ECC0000000000001444
+t1277398732
+s5188
+
+NInfo.plist
+c000000004C23A3D30000000000000490
+t1277404115
+s1168
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies314104630#314104630#0(66"[BEROR]error: There is no SDK with the name or path 'iphoneos4.0'1(4@58"error: There is no SDK with the name or path 'iphoneos4.0'314104630#18446744073709551615#0#0(1@0"0(0#1#0"8617695776#0"0#
+
+CCompileXIB /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/en.lproj/MainWindow.xib
+r0
+
+CCopyStringsFile /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Release/SimpleTableView.app/Contents/Resources/en.lproj/Localizable.strings en.lproj/Localizable.strings
+r0
+
+CCpResource build/Release/SimpleTableView.app/Contents/Resources/Default.png images/Default.png
+r0
+
+CCpResource build/Release/SimpleTableView.app/Contents/Resources/Icon-72.png images/Icon-72.png
+r0
+
+CCpResource build/Release/SimpleTableView.app/Contents/Resources/Icon-Small-50.png images/Icon-Small-50.png
+r0
+
+CCpResource build/Release/SimpleTableView.app/Contents/Resources/Icon-Small.png images/Icon-Small.png
+r0
+
+CCpResource build/Release/SimpleTableView.app/Contents/Resources/Icon-Small@2x.png images/Icon-Small@2x.png
+r0
+
+CCpResource build/Release/SimpleTableView.app/Contents/Resources/Icon.png images/Icon.png
+r0
+
+CCpResource build/Release/SimpleTableView.app/Contents/Resources/Icon@2x.png images/Icon@2x.png
+r0
+
+CCpResource build/Release/SimpleTableView.app/Contents/Resources/iTunesArtwork images/iTunesArtwork
+r0
+
+CProcessInfoPlistFile /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Release/SimpleTableView.app/Contents/Info.plist Info.plist
+r0
+
+CTouch /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Release/SimpleTableView.app
+r0
+
