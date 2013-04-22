@@ -20,7 +20,10 @@
 @implementation ItemInputViewController
 
 @synthesize contactData;
-@synthesize delegate,datePickerView;
+@synthesize delegate;
+@synthesize keyBoardOffset;
+
+UITextField* activeField=nil;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -34,8 +37,59 @@
 
 - (void)viewDidLoad
 {
+ 	// Do any additional setup after loading the view.
+    // load today's date as the default date 
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    df.dateStyle = NSDateFormatterMediumStyle;
+    self.eventDate.text = [NSString stringWithFormat:@"%@",
+                           [df stringFromDate:[NSDate date]]];
+    
+    // add a toolbar for datePicker 'done' button
+    
+    UIToolbar* keyboardDoneButtonView = [[UIToolbar alloc] init];
+    keyboardDoneButtonView.barStyle = UIBarStyleBlack;
+    keyboardDoneButtonView.translucent = YES;
+    keyboardDoneButtonView.tintColor = nil;
+    [keyboardDoneButtonView sizeToFit];
+    UIBarButtonItem* doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Done"
+                                                                   style:UIBarButtonItemStyleBordered target:self
+                                                                  action:@selector(datePickerDoneClicked:)];
+    
+    [keyboardDoneButtonView setItems:[NSArray arrayWithObjects:doneButton, nil]];
+    [self.view addSubview:keyboardDoneButtonView]; // top 'done' buttn
+
+    
+    [self.datePicker addTarget:self
+                        action:@selector(LabelChange:)
+              forControlEvents:UIControlEventValueChanged];
+    
+    self.sv.backgroundColor = [UIColor whiteColor];
+    
+    //register message
+    [self registerForKeyboardNotifications];
+    
+    
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+ 
+}
+
+- (IBAction)pickerDoneClicked:(id)sender {
+    //[self.datePicker removeFromSuperview];
+    self.datePicker.hidden = YES ;
+    [self.eventDate resignFirstResponder];
+}
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    
+    if ( textField == self.eventDate)
+    {
+        self.datePicker.hidden = NO;
+
+     
+        return NO;
+    }
+    else
+        return YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,21 +98,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)saveContact:(id)sender {
-    self.contactData = [ContactData alloc];
-    self.contactData.firstName = self.firstName.text;
-    [[self contactData] setLastName:  self.lastName.text];
-    [[self contactData] setInitialPoints: self.initialPoints.text];
-    self.contactData.notes = self.notes.text;
-
-    if ([ [self delegate] respondsToSelector:@selector(didAddContact:)]) {
-        [ [self delegate] didAddContact:self.contactData];
-    }
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 
 - (IBAction)cancel:(id)sender {
-    
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -90,6 +131,94 @@
     }
     return YES;
 }
+
+- (IBAction)selectDate:(id)sender {
+    
+    [self.eventDate resignFirstResponder];
+
+}
+- (void)datePickerDoneClicked:(id)sender{
+    //[self.datePicker removeFromSuperview];
+    self.datePicker.hidden = YES;
+    [self.eventDate resignFirstResponder];
+}
+- (void)LabelChange:(id)sender{
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    df.dateStyle = NSDateFormatterMediumStyle;
+    self.eventDate.text = [NSString stringWithFormat:@"%@",
+                      [df stringFromDate:self.datePicker.date]];
+}
+
+// Called when the UIKeyboardDidShowNotification is sent.
+- (void)keyboardWasShown:(NSNotification*)aNotification
+{
+    NSDictionary* info = [aNotification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0);
+    self.sv.contentInset = contentInsets;
+    self.sv.scrollIndicatorInsets = contentInsets;
+    
+    // If active text field is hidden by keyboard, scroll it so it's visible
+    // Your application might not need or want this behavior.
+    CGRect aRect = self.view.frame;
+    aRect.size.height -= kbSize.height;
+    if (!CGRectContainsPoint(aRect, activeField.frame.origin) ) {
+        CGPoint scrollPoint = CGPointMake(0.0, activeField.frame.origin.y-kbSize.height);
+        [self.sv setContentOffset:scrollPoint animated:YES];
+    }
+
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    activeField = textField;
+
+    //  RightBarButton.title  = @"Done";
+    //itsRightBarButton.style = UIBarButtonItemStyleDone;
+    //itsRightBarButton.target = self;
+    
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    activeField = nil;
+}
+
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification
+    {
+        UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+        self.sv.contentInset = contentInsets;
+        self.sv.scrollIndicatorInsets = contentInsets;
+    }
+
+- (void)registerForKeyboardNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWasShown:)
+                                                 name:UIKeyboardDidShowNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillBeHidden:)
+                                                 name:UIKeyboardWillHideNotification object:nil];
+    
+}
+
+- (IBAction)saveContact:(id)sender {
+    self.contactData = [ContactData alloc];
+    self.contactData.firstName = self.firstName.text;
+    [[self contactData] setLastName:  self.lastName.text];
+    [[self contactData] setInitialPoints: self.initialPoints.text];
+    self.contactData.notes = self.notes.text;
+    
+    if ([ [self delegate] respondsToSelector:@selector(didAddContact:)]) {
+        [ [self delegate] didAddContact:self.contactData];
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+// Contact - Picker Start
 
 - (IBAction)showPicker:(id)sender {
     ABPeoplePickerNavigationController *picker =
@@ -136,8 +265,8 @@
     }
     self.phoneNo.text = phone;
     CFRelease(phoneNumbers);
-
-
+    
+    
     NSString* email = nil;
     ABMultiValueRef emails = ABRecordCopyValue(person,kABPersonEmailProperty);
     if (ABMultiValueGetCount(emails) > 0) {
@@ -148,22 +277,11 @@
     }
     self.emailAddr.text = email;
     CFRelease(emails);
-
+    
 }
+// Contact Picker code - end 
 
-- (IBAction)selectDate:(id)sender {
 
-    //datePickerView = [[UIDatePicker alloc] initWithFrame:CGRectZero]; CGRectMake(0.0, 0.0, 320.0, 120.0)
-    datePickerView = [[UIDatePicker alloc] initWithFrame:CGRectMake(0.0, 100.0, 160.0, 80.0)];
-    datePickerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
-    datePickerView.datePickerMode = UIDatePickerModeDate;
-    
-    
-    datePickerView.hidden = NO;
-    
-    [self.view addSubview:datePickerView];
-
-}
 @end
 
 

@@ -33,10 +33,16 @@
 
 @end
 
-@interface ItemInputViewController : UIViewController <ABPeoplePickerNavigationControllerDelegate>{
+@interface ItemInputViewController : UIViewController <ABPeoplePickerNavigationControllerDelegate,
+    UITextFieldDelegate>{
     ContactData *contactData;
- }
+    float keyBoardOffset;
 
+ }
+- (IBAction)saveContact:(id)sender;
+@property (strong, nonatomic) IBOutlet UIScrollView *sv;
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+@property (weak, nonatomic) IBOutlet UIButton *selectButton;
 @property (weak, nonatomic) IBOutlet UITextField *phoneNo;
 @property (weak, nonatomic) IBOutlet UITextField *firstName;
 @property (weak, nonatomic) IBOutlet UITextField *lastName;
@@ -45,13 +51,14 @@
 @property (weak, nonatomic) IBOutlet UITextField *emailAddr;
 @property (weak, nonatomic) IBOutlet UITextField *eventDate;
 - (IBAction)showPicker:(id)sender;
-- (IBAction)saveContact:(id)sender;
 - (IBAction)cancel:(id)sender;
 - (IBAction)selectDate:(id)sender;
 
 @property (nonatomic,retain) ContactData *contactData;
+@property (nonatomic,assign) float keyBoardOffset;
+//@property (retain,nonatomic) IBOutlet UIScrollView* sv;
 @property (nonatomic, assign) id<ContactAddDelegate> delegate;
-@property (nonatomic, retain) UIDatePicker *datePickerView;
+
 
 @end
 

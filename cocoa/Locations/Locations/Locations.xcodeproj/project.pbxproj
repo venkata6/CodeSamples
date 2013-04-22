@@ -34,6 +34,7 @@
 		E64C9FA616D3798E00A1B704 /* ItemInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E64C9FA516D3798E00A1B704 /* ItemInputViewController.m */; };
 		E66C29BD170FAE1B00EFD2F9 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E66C29BC170FAE1B00EFD2F9 /* AddressBook.framework */; };
 		E66C29BF170FAE2400EFD2F9 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E66C29BE170FAE2400EFD2F9 /* AddressBookUI.framework */; };
+		E6A88C58171FC263007B73B2 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6A88C57171FC263007B73B2 /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		E64C9FA516D3798E00A1B704 /* ItemInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemInputViewController.m; sourceTree = "<group>"; };
 		E66C29BC170FAE1B00EFD2F9 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		E66C29BE170FAE2400EFD2F9 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		E6A88C57171FC263007B73B2 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6A88C58171FC263007B73B2 /* MessageUI.framework in Frameworks */,
 				E66C29BF170FAE2400EFD2F9 /* AddressBookUI.framework in Frameworks */,
 				E66C29BD170FAE1B00EFD2F9 /* AddressBook.framework in Frameworks */,
 				E64C9F8816CF9FCF00A1B704 /* CoreLocation.framework in Frameworks */,
@@ -117,6 +120,7 @@
 		E64C9F3416CF9E8400A1B704 = {
 			isa = PBXGroup;
 			children = (
+				E6A88C57171FC263007B73B2 /* MessageUI.framework */,
 				E66C29BE170FAE2400EFD2F9 /* AddressBookUI.framework */,
 				E66C29BC170FAE1B00EFD2F9 /* AddressBook.framework */,
 				E64C9F8716CF9FCF00A1B704 /* CoreLocation.framework */,

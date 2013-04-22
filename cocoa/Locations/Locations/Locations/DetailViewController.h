@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
-@interface DetailViewController : UIViewController <UISplitViewControllerDelegate>
+
+@interface DetailViewController : UIViewController <UISplitViewControllerDelegate,MFMailComposeViewControllerDelegate>
 
 @property (strong, nonatomic) id detailItem;
 
+- (IBAction)sendMail:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 @end
