@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12E55" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Events" representedClassName="Events" syncable="YES">
+        <attribute name="date" attributeType="Date" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="points" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="recurrence" attributeType="Integer 16" defaultValueString="365" syncable="YES"/>
+        <relationship name="doneBy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="hasDeeds" inverseEntity="Person" syncable="YES"/>
+    </entity>
+    <entity name="Person" representedClassName="Person" syncable="YES">
+        <attribute name="emailAddr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="lastName" attributeType="String" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phoneNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="hasDeeds" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Events" inverseName="doneBy" inverseEntity="Events" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Events" positionX="10627" positionY="-3303" width="128" height="133"/>
+        <element name="Person" positionX="10420" positionY="-3309" width="128" height="148"/>
+    </elements>
+</model>
