@@ -10,6 +10,6 @@
 #import "InputViewController.h"
 
 
-@interface TestTableViewController : UITableViewController < ContactAddDelegate >
+@interface TestTableViewController : UITableViewController
 
 @end

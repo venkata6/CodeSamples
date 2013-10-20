@@ -21,8 +21,7 @@
 @synthesize managedObjectContext;
 @synthesize addButton;
 @synthesize locationManager;
-//@synthesize itemInputViewController;
-//@synthesize abNewPersonViewController;
+@synthesize document;
 
 // Implement the protocal delegate for itemInputController to get the first name, last name etc
 
@@ -32,18 +31,46 @@
         // Create and configure a new instance of the Event entity.
         Loc *loc = (Loc *)[NSEntityDescription insertNewObjectForEntityForName:@"Loc" inManagedObjectContext:managedObjectContext];
         
-        [loc setFirstName: contactData.firstName];
+       /* [loc setFirstName: contactData.firstName];
         [loc setLastName: contactData.lastName];
         NSNumber * points = [NSNumber numberWithInt:[contactData.initialPoints intValue ]]  ;
         [loc setPoints: points];
         [loc setCreationDate:[NSDate date]];
         [loc setNotes: contactData.notes];
-        
+        [loc setEmailAddr: contactData.emailAddr];
+        [loc setPhoneNo: contactData.phoneNo];
         
         NSError *error = nil;
         if (![managedObjectContext save:&error]) {
             // Handle the error.
         }
+        */
+ /* new database code start  */
+        
+        AppDelegate * appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+        NSURL *storeURL = [[appDelegate applicationDocumentsDirectory] URLByAppendingPathComponent:@"Locations.sqlite"];
+        
+        self.document = [[UIManagedDocument alloc] initWithFileURL:(NSURL *)storeURL];
+        
+        
+        if ([[NSFileManager defaultManager] fileExistsAtPath:[storeURL path]]) {
+            [self.document openWithCompletionHandler:^(BOOL success){
+            if (success) { [self documentIsReady:contactData]; }
+            if (!success) { NSLog( @"couldnt open document"); }
+            }];
+        }
+        else {
+            [self addInitialData];
+            [self.document saveToURL:storeURL forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success){
+                if (!success) {
+                    // Handle the error.
+                }
+            }];
+        }
+
+/* new database code end   */
+        [self documentIsReady:contactData];
+        
         
        [eventsArray insertObject:loc atIndex:0];
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
@@ -54,6 +81,30 @@
         
     }
 }
+
+- (void) addInitialData {
+    
+    
+}
+
+- (void)documentIsReady: (ContactData *)contactData
+{
+    if (self.document.documentState == UIDocumentStateNormal) {
+        NSManagedObjectContext *context = self.document.managedObjectContext;
+        
+        Person *person = [NSEntityDescription insertNewObjectForEntityForName:@"Person"
+                                                        inManagedObjectContext:context];
+        person.firstName = contactData.firstName;
+        person.lastName = contactData.lastName;
+        person.emailAddr = contactData.emailAddr;
+       
+        NSError *error = nil;
+        if (![context save:&error]) {
+            // Handle the error.
+        }
+    }
+}
+
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -265,9 +316,9 @@
     
     cell.detailTextLabel.text = [dateFormatter stringFromDate:[loc creationDate]];
     
-    NSString *string = [NSString stringWithFormat:@"%@, %@ - Points %ld",
+    NSString *string = [NSString stringWithFormat:@"%@ - %ld Points",
                         [loc firstName],
-                        [loc lastName],
+//                        [loc lastName],
                         (long)[[loc points] intValue]];
     cell.textLabel.text = string;
     return cell;

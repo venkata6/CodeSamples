@@ -1,3 +1,7 @@
+http://api.sports.yahoo.com:4080/v1/editorial/league/ncaaf/teams;count=100/players
+http://api.sports.yahoo.com:4080/v1/editorial/league/ncaaf/teams;count=5/players
+
+
 some curl command - curl -sS -v -o /tmp/test -H "Host: alpha.cricket.yahoo.com" 'http://s1.ycpi.in.yahoo.net/ws/pd/predict.php?method=getTemplateDetail&id=12'
 
 put/take server in rotation --- yinst <start/stop> yapache_status
@@ -42,7 +46,9 @@ $ for i in {1..99}; do curl -I# -H'Host: api.cricket.yahoo.com' -w'%{time_connec
 
 http://twiki.corp.yahoo.com/view/Media/YapacheLogReport
 
-zcat access-2009-01-31-00:00:03.gz access-2009-01-31-01:00:03.gz access-2009-01-31-02:00:03.gz access-2009-01-31-03:00:04.gz  access-2009-01-31-04:00:03.gz  access-2009-01-31-05:00:03.gz access-2009-01-31-06:00:02.gz access-2009-01-31-07:00:03.gz  access-2009-01-31-08:00:03.gz access-2009-01-31-09:00:03.gz  | /home/y/bin/readlog -f url,ip,status | awk '{print $2,$3;}' | grep 404
+zcat access-2009-01-31-00:00:03.gz access-2009-01-31-01:00:03.gz access-2009-01-31-02:00:03.gz access-2009-01-31-03:00:04.gz  access-2009-01-31-04:00:03.gz  access-2009-01-31-05:00:03.gz 
+
+access-2009-01-31-06:00:02.gz access-2009-01-31-07:00:03.gz  access-2009-01-31-08:00:03.gz access-2009-01-31-09:00:03.gz  | /home/y/bin/readlog -f url,ip,status | awk '{print $2,$3;}' | grep 404
 
 Slow calls check - for i in `ls access-2009-02-05-0[0-9]?:*.gz`; do zcat $i | readlog -f duration,url | sort -g | tail -n 20 ; done > ~/Feb5ApiSlowCalls.txt
 

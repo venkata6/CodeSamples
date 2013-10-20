@@ -11,6 +11,7 @@
 #import "ItemInputViewController.h"
 #import <AddressBook/AddressBook.h>
 #import <AddressBookUI/AddressBookUI.h>
+#import "Person.h"
 
 @class DetailViewController;
 
@@ -21,6 +22,7 @@
     
     CLLocationManager *locationManager;
     UIBarButtonItem *addButton;
+    UIManagedDocument *document;
     //ItemInputViewController *itemInputViewController;
     //ABNewPersonViewController *abNewPersonViewController;
     
@@ -28,6 +30,7 @@
 
 @property (nonatomic,retain) NSMutableArray *eventsArray;
 @property (nonatomic,retain) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic,retain) UIManagedDocument *document;
 
 @property (nonatomic,retain) CLLocationManager *locationManager;
 @property (nonatomic,retain) UIBarButtonItem *addButton;

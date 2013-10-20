@@ -16,5 +16,7 @@
 @dynamic creationDate;
 @dynamic points;
 @dynamic notes;
+@dynamic emailAddr;
+@dynamic phoneNo;
 
 @end

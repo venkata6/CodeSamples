@@ -7,9 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Person.h"
+#import "Events.h"
+#import "InputEventViewController.h"
 
 @interface TestAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (nonatomic,retain) UIManagedDocument *document;
+@property (nonatomic,retain) NSArray *personArray;
 
+- (void)fetchEntitiesFromDatabase ;
+- (void)saveDocument: (ContactData *)contactData ;
+- (NSArray*) getReminders: (NSString*) recurrence ;
 @end
+
+// value object definition starts here 
+

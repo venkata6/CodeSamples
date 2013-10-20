@@ -210,6 +210,9 @@ UITextField* activeField=nil;
     [[self contactData] setLastName:  self.lastName.text];
     [[self contactData] setInitialPoints: self.initialPoints.text];
     self.contactData.notes = self.notes.text;
+    self.contactData.phoneNo = self.phoneNo.text;
+    self.contactData.emailAddr = self.emailAddr.text;
+    self.contactData.eventDate = self.eventDate.text;
     
     if ([ [self delegate] respondsToSelector:@selector(didAddContact:)]) {
         [ [self delegate] didAddContact:self.contactData];

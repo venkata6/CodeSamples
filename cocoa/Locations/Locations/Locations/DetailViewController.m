@@ -41,6 +41,7 @@
             self.detailDescriptionLabel.text = [[self.detailItem valueForKey:@"notes"] description];
             [self.detailDescriptionLabel setNumberOfLines:0];
             [self.detailDescriptionLabel sizeToFit];
+        //    self.eventDate.text =  [[self.detailItem valueForKey:@"eventDate"] description];
         }
     }
 }
@@ -88,6 +89,9 @@
     picker.mailComposeDelegate = self;  // &lt;- very important step if you want feedbacks on what the user did with your email sheet
     
     [picker setSubject:@"Thank You!"];
+    NSArray * toRecipients = [NSArray arrayWithObject: [[self.detailItem valueForKey:@"emailAddr"] description]];
+    
+    [picker setToRecipients: toRecipients];
     
     // Fill out the email body text
     NSString *emailBody =
@@ -106,6 +110,7 @@
 
 - (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
 {
+    UIAlertView *alert ;
     // Notifies users about errors associated with the interface
     switch (result)
     {
@@ -114,18 +119,20 @@
         case MFMailComposeResultSaved:
             break;
         case MFMailComposeResultSent:
+            alert = [[UIAlertView alloc] initWithTitle:@"" message:@"email sent successfully!"
+                                                           delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            [alert show];
             break;
         case MFMailComposeResultFailed:
             break;
             
         default:
         {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Email" message:@"Sending Failed - Unknown Error :-("
+            alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Sending Failed - Unknown Error :-("
                                                            delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
             [alert show];
         }
-            
-            break;
+           break;
     }
     [self dismissViewControllerAnimated:YES completion:nil];
 }

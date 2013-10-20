@@ -16,4 +16,5 @@
 
 - (IBAction)sendMail:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *eventDate;
 @end

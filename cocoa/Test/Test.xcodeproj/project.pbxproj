@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		E6072168180930D100C34D54 /* SelectPersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6072167180930D100C34D54 /* SelectPersonViewController.m */; };
+		E607217D1813C54200C34D54 /* Events.m in Sources */ = {isa = PBXBuildFile; fileRef = E607217C1813C54200C34D54 /* Events.m */; };
+		E60721801813C54200C34D54 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = E607217F1813C54200C34D54 /* Person.m */; };
+		E60721831813CD3100C34D54 /* ReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E60721821813CD3100C34D54 /* ReminderViewController.m */; };
 		E60747751807D3CA00DA0820 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E60747731807D3CA00DA0820 /* AddressBook.framework */; };
 		E60747761807D3CA00DA0820 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E60747741807D3CA00DA0820 /* AddressBookUI.framework */; };
 		E6A5F627180284B900FCAC27 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A5F626180284B900FCAC27 /* NSString+MD5.m */; };
-		E6A5F62D18028AA800FCAC27 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A5F62C18028AA800FCAC27 /* Person.m */; };
 		E6A5F6301803BC8C00FCAC27 /* InputEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A5F62F1803BC8C00FCAC27 /* InputEventViewController.m */; };
 		E6D4C02617F16D2400435B4B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6D4C02517F16D2400435B4B /* UIKit.framework */; };
 		E6D4C02817F16D2400435B4B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6D4C02717F16D2400435B4B /* Foundation.framework */; };
@@ -26,19 +28,22 @@
 		E6D4C04A17F414C800435B4B /* InputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D4C04917F414C800435B4B /* InputViewController.m */; };
 		E6D4C04D17F7857E00435B4B /* TestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E6D4C04B17F7857E00435B4B /* TestModel.xcdatamodeld */; };
 		E6D4C09217F7B5A800435B4B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6D4C09117F7B5A800435B4B /* CoreData.framework */; };
-		E6D4C09E17F7B61700435B4B /* Events.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D4C09D17F7B61700435B4B /* Events.m */; };
 		E6D4C0A117F9545000435B4B /* TestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D4C0A017F9545000435B4B /* TestTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E6072166180930D100C34D54 /* SelectPersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectPersonViewController.h; sourceTree = "<group>"; };
 		E6072167180930D100C34D54 /* SelectPersonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectPersonViewController.m; sourceTree = "<group>"; };
+		E607217B1813C54200C34D54 /* Events.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Events.h; path = Model/Events.h; sourceTree = "<group>"; };
+		E607217C1813C54200C34D54 /* Events.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Events.m; path = Model/Events.m; sourceTree = "<group>"; };
+		E607217E1813C54200C34D54 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Person.h; path = Model/Person.h; sourceTree = "<group>"; };
+		E607217F1813C54200C34D54 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Person.m; path = Model/Person.m; sourceTree = "<group>"; };
+		E60721811813CD3100C34D54 /* ReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReminderViewController.h; sourceTree = "<group>"; };
+		E60721821813CD3100C34D54 /* ReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReminderViewController.m; sourceTree = "<group>"; };
 		E60747731807D3CA00DA0820 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		E60747741807D3CA00DA0820 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		E6A5F625180284B900FCAC27 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		E6A5F626180284B900FCAC27 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
-		E6A5F62B18028AA800FCAC27 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Person.h; path = Model/Person.h; sourceTree = "<group>"; };
-		E6A5F62C18028AA800FCAC27 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Person.m; path = Model/Person.m; sourceTree = "<group>"; };
 		E6A5F62E1803BC8C00FCAC27 /* InputEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputEventViewController.h; sourceTree = "<group>"; };
 		E6A5F62F1803BC8C00FCAC27 /* InputEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputEventViewController.m; sourceTree = "<group>"; };
 		E6D4C02217F16D2400435B4B /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,8 +64,6 @@
 		E6D4C04917F414C800435B4B /* InputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputViewController.m; sourceTree = "<group>"; };
 		E6D4C04C17F7857E00435B4B /* TestModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel.xcdatamodel; sourceTree = "<group>"; };
 		E6D4C09117F7B5A800435B4B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		E6D4C09C17F7B61700435B4B /* Events.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Events.h; path = Model/Events.h; sourceTree = "<group>"; };
-		E6D4C09D17F7B61700435B4B /* Events.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Events.m; path = Model/Events.m; sourceTree = "<group>"; };
 		E6D4C09F17F9545000435B4B /* TestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTableViewController.h; sourceTree = "<group>"; };
 		E6D4C0A017F9545000435B4B /* TestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,12 +127,14 @@
 				E6072167180930D100C34D54 /* SelectPersonViewController.m */,
 				E6A5F62E1803BC8C00FCAC27 /* InputEventViewController.h */,
 				E6A5F62F1803BC8C00FCAC27 /* InputEventViewController.m */,
-				E6D4C09F17F9545000435B4B /* TestTableViewController.h */,
-				E6D4C0A017F9545000435B4B /* TestTableViewController.m */,
-				E6D4C04B17F7857E00435B4B /* TestModel.xcdatamodeld */,
-				E6D4C05417F7AD8B00435B4B /* Model */,
 				E6D4C04817F414C800435B4B /* InputViewController.h */,
 				E6D4C04917F414C800435B4B /* InputViewController.m */,
+				E6D4C09F17F9545000435B4B /* TestTableViewController.h */,
+				E6D4C0A017F9545000435B4B /* TestTableViewController.m */,
+				E60721811813CD3100C34D54 /* ReminderViewController.h */,
+				E60721821813CD3100C34D54 /* ReminderViewController.m */,
+				E6D4C04B17F7857E00435B4B /* TestModel.xcdatamodeld */,
+				E6D4C05417F7AD8B00435B4B /* Model */,
 				E6D4C02C17F16D2400435B4B /* Supporting Files */,
 			);
 			path = Test;
@@ -152,10 +157,10 @@
 		E6D4C05417F7AD8B00435B4B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E6A5F62B18028AA800FCAC27 /* Person.h */,
-				E6A5F62C18028AA800FCAC27 /* Person.m */,
-				E6D4C09C17F7B61700435B4B /* Events.h */,
-				E6D4C09D17F7B61700435B4B /* Events.m */,
+				E607217E1813C54200C34D54 /* Person.h */,
+				E607217F1813C54200C34D54 /* Person.m */,
+				E607217B1813C54200C34D54 /* Events.h */,
+				E607217C1813C54200C34D54 /* Events.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -231,12 +236,13 @@
 				E6D4C03617F16D2400435B4B /* TestAppDelegate.m in Sources */,
 				E6D4C04A17F414C800435B4B /* InputViewController.m in Sources */,
 				E6D4C04D17F7857E00435B4B /* TestModel.xcdatamodeld in Sources */,
-				E6D4C09E17F7B61700435B4B /* Events.m in Sources */,
 				E6D4C0A117F9545000435B4B /* TestTableViewController.m in Sources */,
 				E6A5F627180284B900FCAC27 /* NSString+MD5.m in Sources */,
-				E6A5F62D18028AA800FCAC27 /* Person.m in Sources */,
 				E6A5F6301803BC8C00FCAC27 /* InputEventViewController.m in Sources */,
 				E6072168180930D100C34D54 /* SelectPersonViewController.m in Sources */,
+				E607217D1813C54200C34D54 /* Events.m in Sources */,
+				E60721801813C54200C34D54 /* Person.m in Sources */,
+				E60721831813CD3100C34D54 /* ReminderViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

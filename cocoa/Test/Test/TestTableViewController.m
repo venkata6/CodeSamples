@@ -7,15 +7,15 @@
 //
 
 #import "TestTableViewController.h"
+#import "TestAppDelegate.h"
 #import "Person.h"
 #import "Events.h"
-#import "NSString+MD5.h"
 
 
 @interface TestTableViewController ()
 @property (nonatomic,retain) UIBarButtonItem *addButton;
-@property (nonatomic,retain) UIManagedDocument *document;
-@property (nonatomic,retain) NSArray *personArray;
+@property (nonatomic,retain) TestAppDelegate *appDelegate;
+@property (nonatomic,retain) NSFetchedResultsController* fetchedResultsController;
 @end
 
 @implementation TestTableViewController
@@ -32,12 +32,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+   
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    self.appDelegate = (TestAppDelegate *) [[UIApplication sharedApplication] delegate];
+
     
     // Set the title.
     self.title = @"Latest";
@@ -45,25 +48,64 @@
     self.addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addEvent)];
     self.addButton.enabled = YES;
     self.navigationItem.rightBarButtonItem = self.addButton;
-
+   
+    // NSFetchedResultsController initialization
+    
+    // Override point for customization after application launch.
     NSURL *documentDir = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-
+    
     NSURL *storeURL = [documentDir URLByAppendingPathComponent:@"Test"];
-    if ( self.document == nil) {
-        self.document = [[UIManagedDocument alloc] initWithFileURL:(NSURL *)storeURL];
+    if ( self.appDelegate.document == nil) {
+        self.appDelegate.document = [[UIManagedDocument alloc] initWithFileURL:(NSURL *)storeURL];
         NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
                                  [NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption,
                                  [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption, nil];
-        self.document.persistentStoreOptions = options;
+        self.appDelegate.document.persistentStoreOptions = options;
     }
-    
+
     if ([[NSFileManager defaultManager] fileExistsAtPath:[storeURL path]]) {
-        [self.document openWithCompletionHandler:^(BOOL success){
-            if (success)  [self fetchEntitiesFromDatabase];
+        [self.appDelegate.document openWithCompletionHandler:^(BOOL success){
+            if (success) {
+                //[self fetchEntitiesFromDatabase];
+                 NSLog( @"Successfully opened document");
+                [self doFetchResultsController];
+               
+            };
             if (!success) NSLog( @"couldnt open document");
         }];
     }
+   
+}
 
+- (void)viewWillAppear:(BOOL)animated {
+      [self doFetchResultsController];
+}
+
+- (void) doFetchResultsController {
+    
+    if (self.appDelegate.document.documentState == UIDocumentStateNormal) {
+        NSManagedObjectContext *context = self.appDelegate.document.managedObjectContext;
+        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Person"];
+        
+        [request setRelationshipKeyPathsForPrefetching:
+        [NSArray arrayWithObject:@"hasDeeds"]];
+        
+        NSSortDescriptor *sortByName = [NSSortDescriptor sortDescriptorWithKey:@"firstName"  ascending:YES];
+        request.sortDescriptors = @[sortByName];
+
+        
+        self.fetchedResultsController = [[NSFetchedResultsController alloc]
+                                              initWithFetchRequest:request
+                                              managedObjectContext:context
+                                              sectionNameKeyPath:nil
+                                              cacheName:nil];
+    
+    
+         NSError *error;
+         BOOL success = [self.fetchedResultsController performFetch:&error];
+        [self.tableView reloadData];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -84,153 +126,26 @@
     if ( [[segue identifier] isEqualToString:@"InputData"] )
     {
         InputViewController* destController = [segue destinationViewController];
-        [destController setDelegate:self];
+       // [destController setDelegate:self];
         [destController setTitle:@"Add person "];
-        [destController setExistingPersons:self.personArray];
+        [destController setExistingPersons:self.appDelegate.personArray];
     }
 }
-
-// Implement the protocal delegate for itemInputController to get the first name, last name etc
-
-- (void) didAddContact:(ContactData *)contactData {
-    if (contactData) {
-        // Create and configure a new instance of the Event entity.
-        /* new database code start  */
-        NSURL *documentDir = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-
-        NSURL *storeURL = [documentDir URLByAppendingPathComponent:@"Test"];
-        if ( !self.document ) {
-          self.document = [[UIManagedDocument alloc] initWithFileURL:(NSURL *)storeURL];
-          NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
-                                  [NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption,
-                                  [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption, nil];
-          self.document.persistentStoreOptions = options;
-        }
-        
-        if ([[NSFileManager defaultManager] fileExistsAtPath:[storeURL path]]) {
-            [self.document openWithCompletionHandler:^(BOOL success){
-                if (success)  [self documentIsReady:contactData];
-                if (!success) NSLog( @"couldnt open document");
-            }];
-        }
-        else {
-            // file does not exist , hence create it
-            [self.document saveToURL:storeURL forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success){
-                if (success)  [self documentIsReady:contactData];
-                if (!success) NSLog( @"couldnt create document");
-            }];
-        }
-    }
-}
-
-- (void)documentIsReady: (ContactData *)contactData {
-    
-    if (self.document.documentState == UIDocumentStateNormal) {
-        NSManagedObjectContext *context = self.document.managedObjectContext;
-        
-        
-        Events *event = [NSEntityDescription insertNewObjectForEntityForName:@"Events"
-                                                      inManagedObjectContext:context];
-        event.points = [NSNumber numberWithInt:[contactData.points intValue]];
-        event.notes  = contactData.notes;
-        event.date = [NSDate date] ;
-        event.id = [NSNumber numberWithInt:1];
-        
-
-        NSString* md5 = [[contactData.firstName stringByAppendingString:contactData.lastName] MD5];
-        Person *alreadyExists = [self checkIfPersonExists:md5];
-
-        if ( alreadyExists == nil ) {
-
-            Person *person = [NSEntityDescription insertNewObjectForEntityForName:@"Person"
-                                                       inManagedObjectContext:context];
-            person.firstName = contactData.firstName;
-            person.lastName = contactData.lastName;
-            person.emailAddr = contactData.emailAddr;
-            person.id = md5 ;
-            [person addHasDeedsObject:event];
-            event.doneBy = person ;
-        }
-        else {
-            event.doneBy = alreadyExists ;
-        }
-        NSError * error = nil;
-        if (![context save:&error]) {
-            if (error) NSLog( @"couldnt save the Events entity");
-        }
-        [self fetchEntitiesFromDatabase ] ;
-        
-    }
-}
-
-- (Person*) checkIfPersonExists: (NSString*) md5 {
-    
-    if (self.document.documentState == UIDocumentStateNormal) {
-        NSManagedObjectContext *context = self.document.managedObjectContext;
-        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Person"];
-    
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id == %@", md5];
-        
-        [request setPredicate:predicate];
-        
-        NSError *error;
-        NSArray *personArr = [context executeFetchRequest:request error:&error];
-        
-        if ( !self.personArray || error) {
-            NSLog(@"error in fetching Person entity, no object returned");
-            
-        }
-        if ( personArr == nil || ([personArr count] == 0)  ) {
-            return nil;
-        }
-        return [personArr objectAtIndex:0] ;
-    }
-    return nil;
-}
-
-
-- (void)fetchEntitiesFromDatabase {
-    
-    if (self.document.documentState == UIDocumentStateNormal) {
-        NSManagedObjectContext *context = self.document.managedObjectContext;
-        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Person"];
-        
-        [request setRelationshipKeyPathsForPrefetching:
-        [NSArray arrayWithObject:@"hasDeeds"]];
-        
-        NSSortDescriptor *sortByName = [NSSortDescriptor sortDescriptorWithKey:@"firstName"  ascending:YES];
-        request.sortDescriptors = @[sortByName];
- 
-        NSError *error;
-        self.personArray = [context executeFetchRequest:request error:&error];
-       
-        if ( !self.personArray || error) {
-            NSLog(@"error in fetching Person entity, no object returned");
-            
-        }
-        [[self tableView] reloadData];
-    }
-}
-
-
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
+ //   return [[self.fetchedResultsController sections] count];
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    if ( self.personArray ) {
-        return self.personArray.count ;
-    }
-    else {
-        return 0 ;
-    }
+    return [[[self.fetchedResultsController sections] objectAtIndex:section] numberOfObjects];
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -239,9 +154,9 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
+    Person* person = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    Person * person = (Person *)[self.personArray objectAtIndex:indexPath.row];
-    NSArray *deeds = [[[self.personArray objectAtIndex:indexPath.row] hasDeeds] allObjects];
+    NSArray *deeds = [[person hasDeeds] allObjects];
     long points = 0 ;
     for ( Events *event in deeds) {
         points += [event.points longValue];

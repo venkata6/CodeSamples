@@ -7,11 +7,16 @@
 //
 
 #import "SelectPersonViewController.h"
+#import "InputEventViewController.h"
 #import "Person.h"
 
 @interface SelectPersonViewController ()
 @property (weak, nonatomic) IBOutlet UIPickerView *personPicker;
 @property (weak, nonatomic) Person* selectedPerson;
+@property (weak, nonatomic) IBOutlet UITextField *firstName;
+@property (weak, nonatomic) IBOutlet UITextField *lastName;
+- (IBAction)goToEvent:(id)sender;
+
 @end
 
 @implementation SelectPersonViewController
@@ -47,6 +52,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ( [[segue identifier] isEqualToString:@"GoToEvent"] )
+    {
+        InputEventViewController * destController = [segue destinationViewController];
+        [destController setTitle:@"Enter Event Details"];
+        [destController setSelectedPerson:self.selectedPerson];
+    }
+}
+
 #pragma mark Picker DataSource/Delegate
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
@@ -64,9 +79,12 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     self.selectedPerson = [self.existingPersons objectAtIndex:row] ;
-    NSLog( self.selectedPerson.firstName) ;
-    NSLog( self.selectedPerson.lastName) ;
+    self.lastName.text  = self.selectedPerson.lastName;
+    self.firstName.text = self.selectedPerson.firstName ;
 }
 
 
+- (IBAction)goToEvent:(id)sender {
+    [self performSegueWithIdentifier: @"GoToEvent" sender: self];
+}
 @end

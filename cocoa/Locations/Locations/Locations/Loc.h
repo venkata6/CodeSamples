@@ -17,5 +17,7 @@
 @property (nonatomic,retain ) NSNumber * points;
 @property (nonatomic, retain) NSDate * creationDate;
 @property (nonatomic, retain) NSString * notes;
+@property (nonatomic, retain) NSString * emailAddr;
+@property (nonatomic, retain) NSString * phoneNo;
 
 @end

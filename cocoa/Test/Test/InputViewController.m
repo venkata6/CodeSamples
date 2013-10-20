@@ -8,12 +8,8 @@
 
 #import "InputViewController.h"
 #import "SelectPersonViewController.h"
+#import "InputEventViewController.h"
 #import "Person.h"
-
-
-@implementation ContactData
-
-@end
 
 
 @interface InputViewController ()
@@ -22,9 +18,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *emailAddr;
 @property (weak, nonatomic) IBOutlet UIButton *selectContact;
 @property (weak, nonatomic) IBOutlet UITextField *phoneNo;
-@property (strong, nonatomic) ContactData* contactData;
-@property (nonatomic,retain) UIBarButtonItem *nextButton;
-@property (weak, nonatomic) Person* selectedPerson;
+@property (retain, nonatomic) Person* selectedPerson;
 - (IBAction)showPhoneContacts:(id)sender;
 - (IBAction)nextPage:(id)sender;
 - (IBAction)selectExistingPerson:(id)sender;
@@ -48,38 +42,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.nextButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(nextEvent)];
-    self.nextButton.enabled = YES;
-    self.navigationItem.rightBarButtonItem = self.nextButton;
+    // AppDelegate * appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
     
-}
-
-- (void)nextEvent {
-    
-    [self performSegueWithIdentifier: @"InputEvent" sender: self];
-    
-}
-
-
-- (IBAction)cancel:(id)sender {
-}
-
-- (IBAction)save:(id)sender {
-    self.contactData = [ContactData alloc];
-    self.contactData.firstName = self.firstName.text;
-    self.contactData.lastName = self.lastName.text;
-    self.contactData.phoneNo = self.phoneNo.text;
-    self.contactData.emailAddr = self.emailAddr.text;
-    
-    // convert string to date
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    [df setDateFormat:@"yyyy-MM-dd hh:mm:ss a"];
-//    self.contactData.date = [df dateFromString: self.date.text];
-      
-    if ([ [self delegate] respondsToSelector:@selector(didAddContact:)]) {
-        [ [self delegate] didAddContact:self.contactData];
-    }
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 // this is needed to dismiss the keyboard which comes while typing
@@ -92,19 +56,9 @@
     else if (theTextField == self.lastName) {
         [theTextField resignFirstResponder];
     }
-  /*  else if (theTextField == self.points) {
-        [theTextField resignFirstResponder];
-    }
-    else if (theTextField == self.notes) {
-        [theTextField resignFirstResponder];
-    }
-   */
     else if (theTextField == self.emailAddr) {
         [theTextField resignFirstResponder];
     }
-   /* else if (theTextField == self.date) {
-        [theTextField resignFirstResponder];
-    }*/
     else if (theTextField == self.phoneNo) {
         [theTextField resignFirstResponder];
     }
@@ -186,7 +140,23 @@
     {
         SelectPersonViewController * destController = [segue destinationViewController];
         [destController setTitle:@"Select person "];
+   //     [destController setDelegate:self];
         [destController setExistingPersons:self.existingPersons];
+    }
+    else if ( [[segue identifier] isEqualToString:@"InputEvent"] )
+    {
+        InputEventViewController * destController = [segue destinationViewController];
+        [destController setTitle:@"Enter Event Details"];
+        if ( self.selectedPerson == nil ){
+            destController.contactData = [ContactData alloc];
+            destController.contactData.firstName = self.firstName.text;
+            destController.contactData.lastName = self.lastName.text;
+            destController.contactData.phoneNo = self.phoneNo.text;
+            destController.contactData.emailAddr = self.emailAddr.text;
+        }
+        else {
+            [destController setSelectedPerson:self.selectedPerson];
+        }
     }
 }
 

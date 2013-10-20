@@ -7,9 +7,11 @@
 //
 
 #import "ReminderViewController.h"
+#import "TestAppDelegate.h"
+#import "Events.h"
 
 @interface ReminderViewController ()
-
+@property (nonatomic,retain) NSArray *remindersArray;
 @end
 
 @implementation ReminderViewController
@@ -32,6 +34,15 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    TestAppDelegate* appDelegate = (TestAppDelegate *) [[UIApplication sharedApplication] delegate];
+    self.remindersArray = [appDelegate getReminders:@"W"];
+    [[self tableView] reloadData];
+    
+}
+- (void)viewWillAppear:(BOOL)animated {
+    TestAppDelegate* appDelegate = (TestAppDelegate *) [[UIApplication sharedApplication] delegate];
+    self.remindersArray = [appDelegate getReminders:@"W"];
+    [[self tableView] reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,24 +55,39 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    //return 0;
+    return [self.remindersArray count];
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"Reminder";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
+    
+    Events* event = [self.remindersArray objectAtIndex: indexPath.row];
+    
+    Person * person = [event doneBy] ;
+    int l  = ([event.notes length] > 15) ? 15 : [event.notes length];
+    
+    NSString* forDisplay = [[event notes] substringToIndex:l];
+    NSString *string = [NSString stringWithFormat:@"%@ ...by %@ - %@",
+                        forDisplay,
+                        person.firstName,
+                        person.lastName ];
+    
+    cell.textLabel.text = string;
+    return cell;
+
     
     return cell;
 }
