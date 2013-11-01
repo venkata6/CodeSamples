@@ -28,15 +28,16 @@
         self.document.persistentStoreOptions = options;
     }
     
-   /* if ([[NSFileManager defaultManager] fileExistsAtPath:[storeURL path]]) {
+/*  
+    if ( [[NSFileManager defaultManager] fileExistsAtPath:[storeURL path]]) {
         [self.document openWithCompletionHandler:^(BOOL success){
             if (success) {
-                //[self fetchEntitiesFromDatabase];
+                [self fetchEntitiesFromDatabase];
                 NSLog( @"Successfully opened document");
             };
             if (!success) NSLog( @"couldnt open document");
         }];
-    }*/
+    } */
     return YES;
 }
 							
@@ -167,7 +168,7 @@
         NSError *error;
         NSArray *personArr = [context executeFetchRequest:request error:&error];
         
-        if ( !self.personArray || error) {
+        if ( !personArr || error) {
             NSLog(@"error in fetching Person entity, no object returned");
             
         }

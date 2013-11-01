@@ -78,7 +78,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-      [self doFetchResultsController];
+     // [self doFetchResultsController];
 }
 
 - (void) doFetchResultsController {
@@ -98,12 +98,16 @@
                                               initWithFetchRequest:request
                                               managedObjectContext:context
                                               sectionNameKeyPath:nil
-                                              cacheName:nil];
+                                              cacheName:@"PersonCache"];
+        self.fetchedResultsController.delegate = self ;
     
     
          NSError *error;
          BOOL success = [self.fetchedResultsController performFetch:&error];
         [self.tableView reloadData];
+        
+//   also load the personArray in appDelegate
+        [self.appDelegate fetchEntitiesFromDatabase] ;
     }
     
 }
@@ -222,5 +226,65 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
 }
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+    [self.tableView beginUpdates];
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
+       atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
+      newIndexPath:(NSIndexPath *)newIndexPath {
+    
+    UITableView *tableView = self.tableView;
+    
+    switch(type) {
+            
+        case NSFetchedResultsChangeInsert:
+            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
+                             withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeDelete:
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+                             withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeUpdate:
+            [self configureCell:[tableView cellForRowAtIndexPath:indexPath]
+                    atIndexPath:indexPath];
+            break;
+            
+        case NSFetchedResultsChangeMove:
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+                             withRowAnimation:UITableViewRowAnimationFade];
+            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
+                             withRowAnimation:UITableViewRowAnimationFade];
+            break;
+    }
+}
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
+    Person* person = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    NSArray *deeds = [[person hasDeeds] allObjects];
+    long points = 0 ;
+    for ( Events *event in deeds) {
+        points += [event.points longValue];
+        
+    }
+    
+    NSString *string = [NSString stringWithFormat:@"%@ - %@ %ld Points",
+                        person.firstName,
+                        person.lastName, points ];
+    
+    cell.textLabel.text = string;
+
+//    cell.textLabel.text = [NSString stringWithFormat:@"%d",indexPath.row];
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    //[self.tableView reloadData];
+    //[self doFetchResultsController];
+    [self.tableView endUpdates];
+}
+
 
 @end

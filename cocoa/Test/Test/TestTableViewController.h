@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "InputViewController.h"
+#import <CoreData/CoreData.h>
 
 
-@interface TestTableViewController : UITableViewController
+@interface TestTableViewController : UITableViewController <NSFetchedResultsControllerDelegate>
 
 @end
