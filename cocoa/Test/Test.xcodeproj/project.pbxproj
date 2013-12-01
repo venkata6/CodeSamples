@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8283B80F1832C7950077BC02 /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8283B80E1832C7950077BC02 /* EventDetailViewController.m */; };
+		8283B81118332D8B0077BC02 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8283B81018332D8B0077BC02 /* MessageUI.framework */; };
+		82A3C50F1832274D00D57CBE /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A3C50E1832274D00D57CBE /* DetailViewController.m */; };
 		E6072168180930D100C34D54 /* SelectPersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6072167180930D100C34D54 /* SelectPersonViewController.m */; };
 		E607217D1813C54200C34D54 /* Events.m in Sources */ = {isa = PBXBuildFile; fileRef = E607217C1813C54200C34D54 /* Events.m */; };
 		E60721801813C54200C34D54 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = E607217F1813C54200C34D54 /* Person.m */; };
@@ -32,6 +35,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8283B80D1832C7950077BC02 /* EventDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailViewController.h; sourceTree = "<group>"; };
+		8283B80E1832C7950077BC02 /* EventDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailViewController.m; sourceTree = "<group>"; };
+		8283B81018332D8B0077BC02 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		82A3C50D1832274D00D57CBE /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		82A3C50E1832274D00D57CBE /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		E6072166180930D100C34D54 /* SelectPersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectPersonViewController.h; sourceTree = "<group>"; };
 		E6072167180930D100C34D54 /* SelectPersonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectPersonViewController.m; sourceTree = "<group>"; };
 		E607217B1813C54200C34D54 /* Events.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Events.h; path = Model/Events.h; sourceTree = "<group>"; };
@@ -73,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8283B81118332D8B0077BC02 /* MessageUI.framework in Frameworks */,
 				E60747751807D3CA00DA0820 /* AddressBook.framework in Frameworks */,
 				E60747761807D3CA00DA0820 /* AddressBookUI.framework in Frameworks */,
 				E6D4C09217F7B5A800435B4B /* CoreData.framework in Frameworks */,
@@ -107,6 +116,7 @@
 		E6D4C02417F16D2400435B4B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8283B81018332D8B0077BC02 /* MessageUI.framework */,
 				E6D4C09117F7B5A800435B4B /* CoreData.framework */,
 				E6D4C02517F16D2400435B4B /* UIKit.framework */,
 				E6D4C02717F16D2400435B4B /* Foundation.framework */,
@@ -123,6 +133,10 @@
 				E6D4C03417F16D2400435B4B /* TestAppDelegate.h */,
 				E6D4C03517F16D2400435B4B /* TestAppDelegate.m */,
 				E6D4C03D17F16D2400435B4B /* MainStoryboard.storyboard */,
+				8283B80D1832C7950077BC02 /* EventDetailViewController.h */,
+				8283B80E1832C7950077BC02 /* EventDetailViewController.m */,
+				82A3C50D1832274D00D57CBE /* DetailViewController.h */,
+				82A3C50E1832274D00D57CBE /* DetailViewController.m */,
 				E6072166180930D100C34D54 /* SelectPersonViewController.h */,
 				E6072167180930D100C34D54 /* SelectPersonViewController.m */,
 				E6A5F62E1803BC8C00FCAC27 /* InputEventViewController.h */,
@@ -235,6 +249,7 @@
 				E6D4C03217F16D2400435B4B /* main.m in Sources */,
 				E6D4C03617F16D2400435B4B /* TestAppDelegate.m in Sources */,
 				E6D4C04A17F414C800435B4B /* InputViewController.m in Sources */,
+				8283B80F1832C7950077BC02 /* EventDetailViewController.m in Sources */,
 				E6D4C04D17F7857E00435B4B /* TestModel.xcdatamodeld in Sources */,
 				E6D4C0A117F9545000435B4B /* TestTableViewController.m in Sources */,
 				E6A5F627180284B900FCAC27 /* NSString+MD5.m in Sources */,
@@ -243,6 +258,7 @@
 				E607217D1813C54200C34D54 /* Events.m in Sources */,
 				E60721801813C54200C34D54 /* Person.m in Sources */,
 				E60721831813CD3100C34D54 /* ReminderViewController.m in Sources */,
+				82A3C50F1832274D00D57CBE /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

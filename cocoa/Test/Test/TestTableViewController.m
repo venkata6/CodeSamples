@@ -7,6 +7,7 @@
 //
 
 #import "TestTableViewController.h"
+#import "DetailViewController.h"
 #import "TestAppDelegate.h"
 #import "Person.h"
 #import "Events.h"
@@ -37,7 +38,7 @@
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
     self.appDelegate = (TestAppDelegate *) [[UIApplication sharedApplication] delegate];
 
@@ -134,6 +135,11 @@
         [destController setTitle:@"Add person "];
         [destController setExistingPersons:self.appDelegate.personArray];
     }
+    if ([[segue identifier] isEqualToString:@"Detail"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        Person* person = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        [[segue destinationViewController] setPerson:person];
+    }
 }
 
 #pragma mark - Table view data source
@@ -219,12 +225,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    // Configure the cell...
+     [self performSegueWithIdentifier: @"Detail" sender: self];
 }
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView beginUpdates];
