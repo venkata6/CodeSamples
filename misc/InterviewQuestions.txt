@@ -1,0 +1,138 @@
+Java:
+1) what is a classloader? why we need custom class loader ?
+2) synchronized method Vs synchronized block ?
+3) does generics result in Runtime penalty ?
+4) singleton , abstract factory
+5) final,finally,finalize ( dont use "finalize" at all as it is not guaranteed to be called at all)
+6) Difference between abstract class  and interface in java ? 
+   a) abstract class methods can have default implementations. 
+   b) class can implement several interface but can extend only abstract class c) variables declared in interface are by default final.
+       All constant values defined in an interface are implicitly public, static, and final
+      Unlike interfaces, abstract classes can contain fields that are not static and final,
+   d) final keyword for method means it cannot be overriden in derived classes. Methods called from constructors needs to be final
+   e) final keyword for classes is it cannot be subclassed.
+7) Checked Exception Vs UnChecked Exception -  RuntimeException - RuntimeException is unchecked, - The Java compiler forces 
+   you to either catch checked exceptions or declare them in the method signature.
+   Use checked expections for recoverable conditions and runtime exceptions for programming errors
+8) Threads - implement 'Runnable' interface. Override run() method and call like  (new Thread ( new XXXRunnable()).start) 
+    b) extend Thread class and call start() ;
+    c) thread should invoke methods which throw 'InterruptedException' or check periodically Thread.interrupted() so that it can return.
+    d) pause one's own execution using sleep() while pause on another thread using t.join() .
+    e) for large scale systems, use Executor interface.  if 'r' is runnable class, e.execute(r) 
+9) what is a volatile keyword in Java? atomic reads/writes - volatile is used to indicate that a variable's value will be modified
+   by different threads.  never be cached thread-locally: acts as though it is enclosed in a synchronized block, synchronized on itself. 
+   See java.util.concurrent.atomic for more support.. ( "AtomicInteger" is the latest .. so use it instead of "volatile" keyword )
+10) what is "dependency injection" ? Dependency injection means giving an object its instance variables. 
+    a) setter DI  b) contructor DI  c) Interface DI ( Objective C uses Interface DI )
+11) what is "inversion of control" ? same as DI - 
+12) Type Erasure , replace T with Object if T is unbounded. If T is bounded, then replace with the first bounded class
+    Example ,  "T extends Comparable"
+13) "Bridge" methods also happens during generics type erasure process
+14) A "reifiable" type is a type whose type information is fully available at runtime and "Non-reifiable" types are types where information has been removed at compile-time by type erasure 
+15) Generics restrictions a) can't instantiate generics with primitives ( autoboxing) b) can't create instance of type parameters c) static fields can't be T d) can't create arrays of Parametrized types d) cannot create,catch or throw objects of parameterized types
+16) difference sleep Vs wait ? Wait() releases the lock while sleep() dont .. wait() waits till another thread calls notify() or notifyAll() 
+17) explain deadlock,starvation,livelock etc
+18) Executor - instead of doing new Thread(r).start() ---> we do Executor.execute(r) ;  // thread pool - thread reuse 
+               OR ExecutorService.submit(r) ;
+19) how to make collections immutable?  use the Collecitons.unmodifiable for existing Collections
+20) how does HashMap work ? HashMap takes null ( HT doesn't) put -->hashcode -->bucket -->linkedlist -->Map.Entry<K,V>
+21) how garbage collector works ? good practice - always set the object to null when not needed
+22) Linked List Vs ArrayList - Linked List is a doublyLinkedList whereas ArrayList is an dynamically resizing array. LL access in O(n)
+23) TreeMap Vs HashMap -> TreeMap gives sorted Keys	
+24) "Future" interface -> A Future represents the result of an asynchronous computation see 26)
+25) how to override "equals" methods --> 2 functions --> equals(Object o ) and equals(TYPE t) .. in the first one 
+    check  'o instanceOf(t) 
+26) Callable Vs Runnable - Runnable doesnot return result and cannot throw "Checked Exception".. Callable return "Future" object and that can 
+    be used to cancel() , get() etc
+    x : implements Callable , override call () ; whatever we return in call() is what we need to parameterize in ExecutorService.submit() return value like  Future<String> , or Future<ArrayList> .. then  Future.get() will return that <type> which can be used for results of thread execution
+
+27) jstat -gc <processId>  for gc stat or other JVM stats
+28) thread states - new,runnable,blocked,waiting and timed_waiting and terminated 
+29) Comparable Vs Comparator - Comparable is natural ordering of the object like if two objects are "equal()" then it should return zero. Comparator is custom 
+30) Weak References - when we store objects in HashMap, we can use weakHashMap where the key is weakReference
+    Soft reference - same as Weak References but stays in memory longer
+    Phantom reference - Enqueued into Reference Queue after it is removed from memory. So use it when you want to know when an object is removed from memory
+    Strong reference - normal class usage 
+    WE can create a weak,soft or phanton reference for any given Object and if we pass a "ReferenceQueue" to the constructor, the GC enqueue the object when it is GC'ed. For Phantom, it is after GC'ed and for weak and soft it could be before when it is marked 
+
+
+Hadoop: 
+1) Secondary namenode - what is the usage ? - Secondary Namenode does puts a checkpoint in filesystem 
+ 
+
+Objective C:
+1) blocks
+2) delegate Vs notification
+3) 
+
+http://programming4interviews.wordpress.com/
+
+Logic/Data Structure 
+1) binary search tree --> if java, make sure "call by value" for objects are proper. for objects, object references are passed "by value" 
+2) lowest common ancestor --> collect all parents to root in a array  and then compare after making sure the levels are same in both the nodes.
+   a) LCA of BST is simple. if both values are less than root , recurse with leftchild etc, till one value is left and one valye is right.
+3) Deep copy in Java --> singly linked list --> a,b,c -->  a(c) , b(b) , c(a) --> 1(3), 2(2) , 3(1) --> use a hashmap to store a-->1, b-->2, c-->3
+4) implement cache, --> need to used doubly linked list and a hashmap .. or use linkedHashMap 
+5) data structure for text editor
+6) linear array - either increasing then decreases OR decrease then increases.. sorted .. findTheIndexOfMaxElement -- use binarySearch -->
+   int findMaxElementIndex ( array, minIndex, maxIndex) --> log n 
+7) if 20% chance of packet loss, how much retransmission is required for lossLess transmission -   ( 0.2) ^ 2 
+   point to note is -> for atleat one message to get through, probability is  1-(proability of all messages failed) 
+   So we have 1- (0.2) ^ ( times resend)
+8) tinyURL service - design it --> point to note is instead of using a SHA or any random pattern, use the predefined pattern in the table and return it.
+9) fizzbuzz test --> if ( # is divisble by 3 & 5 ) print "fizzbuzz" 
+10)install packages routine --> use two hashmap and one for already installed packages and another one for dependencies
+11) find the duplicatae in array ( 1...100) ---> n*(n+1)/2 ..  do it for the file case with infinite numbers --> keep suming and keep counting the numbers
+12) binpacking NP Hard problem --> approximation is go on each coordinate.. then to optimize use divide and conquer algorithm.
+13) Tree has values in each node. Give the total value of the tree. --> use call stack and recurse 
+14) find if the given number is power of 2 
+15) design a system which gives process_id ? get_process_id() and release_id() .. get_process_id --> just a counter , release_id --> may be a heap or a bitmap
+16) code for palindrome - use two conters i and j 
+17) Given an array of integers and a number X. Write a program that list downs 
+    pair(s) of integers from the array that add up tonumber X. (hash.put(arr[i]=i,then serach for h.get(x-arr[i]) != i) 
+18) Write the post order traversal of binary search tree without recursion.
+19) Write an algorithm to find out depth(aka height) of the binary search tree.
+20) Check BST property 
+21) convert array to singly linked list 
+22) find all the primes from 1 to X , for a given X - Answer - Sieve of Eratosthenes
+23) find power of X 
+
+Design Pattern:
+1) what is the difference between Abstract Factory and Factory design patterns?
+2) Factory methoid is also called "virtual contructor" 
+
+Web : 
+1) what is a cookie --> name value pair 
+2) how is cookie managed ? --> set the "expires" to a past date , set-cookie is used to set/edit/delete the cookie
+3) 
+
+SQL: 
+1) "group by"
+2) left & right join
+3) subselect 
+4) why indices are needed.
+5) Union keyword - select col1 from T1 UNION select col1 from T2, col1 needs to be same
+6) Pagination support - Mysql - limit <start,offset>  , Oracle rownum 
+7) Searching for patterns -  LIKE 's%'
+8) wildcards '%' , '_', '[] 
+9) INNER JOIN is same as JOIN .. select * from t1 INNER JOIN  t2 ON  t1.col1 = t2.col2
+10) VARCHAR Vs TEXT in mysql - varchar if we know the data size TEXT if the string is larger
+11) PRIMART KEY constraint automatically has UNIQUE and NOT NULL constraints
+12) "Foriegn key" constraint points to "primary key" in another table
+13) Check "Group By" and "Having" - having is there since we can't use aggegate functions in where clause 
+14) Isolation levels - Read Uncommitted, Read Committed, Repeatable Read and Serializable
+    InnoDB - Default is "Repeatable Read" - 
+15) MySql - InnoDB - Select ** for update and Lock in share mode -  the row-level locks are actually index-record locks
+16) If you have no indexes suitable for your statement and MySQL must scan the entire table to process the statement, every
+     row of the table becomes locked, which in turn blocks all inserts by other users to the table. It is important to create good indexes so that your queries do not unnecessarily scan many rows.
+17) master-slave configuraton , writes always go to master, and reads will be always from slaves
+18) ordinary select doesnot do any lock ( unless the isolation level is Serializable ) 
+
+
+git:
+1) difference between pull & fetch - fetch will refresh the local copy of the remote, pull will do a fetch + merge
+
+Cache: 
+1) squid - proxy + cache - squid caches the returned data as well  cache-control headers - 
+2) cache-control - etag, vary
+3) 
