@@ -1,0 +1,16 @@
+{
+    "jscodehints.detectedExclusions": [
+        "/Users/venkat/work/CodeSamples/ionic/kk/platforms/ios/www/plugins/org.apache.cordova.device/www/device.js",
+        "/Users/venkat/work/CodeSamples/ionic/kk/platforms/ios/www/plugins/org.apache.cordova.console/www/logger.js",
+        "/Users/venkat/work/CodeSamples/ionic/kk/www/js/controllers.js",
+        "/Users/venkat/work/CodeSamples/ionic/kk/platforms/ios/www/lib/ionic/js/angular/angular-sanitize.js",
+        "/Users/venkat/work/CodeSamples/ionic/kk/plugins/org.apache.cordova.device/src/windows8/DeviceProxy.js",
+        "/Users/venkat/work/CodeSamples/ionic/kk/platforms/ios/build/emulator/kk.app/www/lib/ionic/js/angular-ui/angular-ui-router.min.js",
+        "/Users/venkat/work/CodeSamples/ionic/kk/platforms/ios/CordovaLib/cordova.js",
+        "/Users/venkat/work/CodeSamples/ionic/kk/platforms/ios/platform_www/cordova.js",
+        "/Users/venkat/work/CodeSamples/ionic/kk/platforms/ios/www/cordova.js",
+        "/Users/venkat/work/CodeSamples/ionic/kk/platforms/ios/www/cordova_plugins.js",
+        "/Users/venkat/work/CodeSamples/ionic/kk/sociogram-angular-ionic/www/lib/ionic/js/angular-ui/angular-ui-router.min.js",
+        "/Users/venkat/work/CodeSamples/ionic/kk/platforms/android/cordova/lib/device.js"
+    ]
+}
