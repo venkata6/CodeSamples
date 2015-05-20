@@ -32,11 +32,11 @@ angular.module('sociogram', ['ionic', 'openfb', 'sociogram.controllers'])
                 templateUrl: "templates/menu.html",
                 controller: "AppCtrl"
             })
-
+            
             .state('app.login', {
                 url: "/login",
                 views: {
-                    'menuContent': {
+                    'tab-feed': {
                         templateUrl: "templates/login.html",
                         controller: "LoginCtrl"
                     }
