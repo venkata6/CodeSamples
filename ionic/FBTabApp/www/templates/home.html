@@ -1,0 +1,70 @@
+<ion-view title="Home">
+
+<!--     <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons> -->
+
+    <ion-content has-header="true">
+
+   <!--     <ion-list>
+            <ion-item ng-repeat="friend in friends">
+                {{friend.name}}
+            </ion-item>
+        </ion-list>
+   -->
+ <!--       <div class="col-sm-5">
+                <div class="dashboard panel panel-warning">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Dashboard - Welcome, {{me.name}} !</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="pointsgiven"><p>Total points given - {{ kkData.pointsGiven }} </p> </div>
+                        <div class="pointsgot"><p>Total points got - {{ kkData.pointsGot }}</p> </div>
+                        <div class="pointsto"><p>Points given to - {{ kkData.toPeople }} </p> </div>
+                        <div class="pointsfrom"><p>Points got from - {{ kkData.fromPeople }} </p> </div>
+                    </div>
+                </div>
+            </div>
+        </div>    -->
+        
+        
+<!--        <button class="button button-clear button-assertive">
+            Welcome, {{me.name}} ! 
+        </button>    
+-->            
+        <div class="list">
+            <div class="item item-divider">Points</div>
+            <a class="item item-icon-left" href="#">
+                <i class="icon ion-star"></i>
+                Total points given 
+          <span class="badge badge-assertive">{{ kkData.pointsGiven }}</span> 
+            </a>
+            <a class="item item-icon-left" href="#">
+                <i class="icon ion-star"></i>
+                Total points got 
+           <span class="badge badge-assertive">{{ kkData.pointsGot }}</span>
+            </a>
+            <div class="item item-divider">Persons</div>
+            <a class="item item-icon-left" href="#">
+                <i class="icon ion-star"></i>
+                Points given to 
+            <span class="badge badge-assertive">{{ kkData.toPeople }}</span> 
+            </a>
+            <a class="item item-icon-left" href="#">
+                <i class="icon ion-star"></i>
+                Points got from 
+            <span class="badge badge-assertive">{{ kkData.fromPeople }} </span> 
+            </a>
+        </div>
+        <div class="row">    
+        <div class="col text-center">    
+        <button class="button button-positive" ui-sref="tab.give_points">
+          Give Points
+        </button>
+        </div>    
+        </div>    
+        
+        
+    </ion-content>
+
+</ion-view>

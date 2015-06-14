@@ -1,0 +1,48 @@
+<ion-view view-title="Points">
+  <ion-content>
+    <ion-list>
+    <!--  <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+        <img ng-src="{{chat.face}}">
+        <h2>{{chat.name}}</h2>
+        <p>{{chat.lastText}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(chat)">
+          Delete
+        </ion-option-button>
+      </ion-item>-->
+    <div class="item item-divider">
+      Points - TO 
+     </div>    
+     <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="friend in sortedListTo" type="item-text-wrap" href="#/tab/points/detail/to/{{friend.name}}">
+        <img ng-src="{{friend.fbdata.picture.data.url}}">  
+        <h2>{{friend.name}}</h2>
+       <p>{{friend.fbdata.first_name}}</p> 
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+         <span class="badge badge-assertive"> {{ friend.points }} </span>
+         
+<!--        <ion-option-button class="button-assertive" ng-click="remove(chat)">
+          Delete
+        </ion-option-button> -->
+      </ion-item>   
+        
+         <div class="item item-divider">
+      Points - FROM 
+     </div> 
+        <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="friend in sortedListFrom" type="item-text-wrap" href="#/tab/points/detail/from/{{friend.name}}">
+        <img ng-src="{{friend.fbdata.picture.data.url}}">  
+        <h2>{{friend.name}}</h2>
+       <p>{{friend.fbdata.first_name}}</p> 
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+         <span class="badge badge-assertive"> {{ friend.points }} </span>
+         
+<!--        <ion-option-button class="button-assertive" ng-click="remove(chat)">
+          Delete
+        </ion-option-button> -->
+      </ion-item>       
+        
+    </ion-list>
+  </ion-content>
+</ion-view>

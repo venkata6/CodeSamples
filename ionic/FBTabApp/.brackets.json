@@ -1,0 +1,12 @@
+{
+    "jscodehints.detectedExclusions": [
+        "/Users/venkat/work/CodeSamples/ionic/FBTabApp/platforms/ios/www/plugins/org.apache.cordova.file/www/ios/FileSystem.js",
+        "/Users/venkat/work/CodeSamples/ionic/FBTabApp/plugins/org.apache.cordova.file/src/blackberry10/index.js",
+        "/Users/venkat/work/CodeSamples/ionic/FBTabApp/platforms/ios/build/emulator/FBTabApp.app/www/plugins/org.apache.cordova.file/www/ios/FileSystem.js",
+        "/Users/venkat/work/CodeSamples/ionic/FBTabApp/platforms/ios/www/plugins/org.apache.cordova.file/www/Metadata.js",
+        "/Users/venkat/work/CodeSamples/ionic/FBTabApp/platforms/ios/www/plugins/org.apache.cordova.file/www/ProgressEvent.js",
+        "/Users/venkat/work/CodeSamples/ionic/FBTabApp/platforms/ios/www/plugins/org.apache.cordova.file/www/requestFileSystem.js",
+        "/Users/venkat/work/CodeSamples/ionic/FBTabApp/platforms/ios/www/plugins/org.apache.cordova.file/www/resolveLocalFileSystemURI.js",
+        "/Users/venkat/work/CodeSamples/ionic/FBTabApp/platforms/ios/www/plugins/org.apache.cordova.inappbrowser/www/inappbrowser.js"
+    ]
+}
