@@ -26,7 +26,7 @@ angular.module('starter.controllers', [])
         OpenFB.login('email,read_stream,publish_actions,user_friends').then(
             function () {
                //$location.path('/app/person/me/feed');
-                //$location.path('/tab/home');
+                $location.path('/tab/home');
             },
             function () {
                 alert('OpenFB login failed');
