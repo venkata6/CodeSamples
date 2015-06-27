@@ -10,8 +10,9 @@ angular.module('starter', ['ionic', 'openfb', 'starter.controllers', 'starter.se
 .run(function ($rootScope, $state, $ionicPlatform, $window, OpenFB) {
    //OpenFB.init('221283828060895','https://www.facebook.com/connect/login_success.html');
   OpenFB.init('221283828060895','http://localhost:8100/oauthcallback.html');
-   
-/*// DEBUG START -     
+
+/*    
+// DEBUG START -     
 $rootScope.$on('$stateChangeStart',function(event, toState, toParams, fromState, fromParams){
   console.log('$stateChangeStart to '+toState.to+'- fired when the transition begins. toState,toParams : \n',toState, toParams);
 });
@@ -32,8 +33,8 @@ $rootScope.$on('$viewContentLoaded',function(event){
 $rootScope.$on('$stateNotFound',function(event, unfoundState, fromState, fromParams){
   console.log('$stateNotFound '+unfoundState.to+'  - fired when a state cannot be found by its name.');
   console.log(unfoundState, fromState, fromParams);
-});*/
-
+});
+*/
 // DEBUG END      
     
     
