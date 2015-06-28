@@ -124,6 +124,15 @@ $rootScope.$on('$stateNotFound',function(event, unfoundState, fromState, fromPar
         }
       }
     }) 
+  .state('tab.post_points', {
+      url: '/post_points',
+      views: {
+        'tab-home': {
+          templateUrl: 'templates/post-points.html',
+          controller: 'PointsPostCtrl'
+        }
+      }
+    }) 
     .state('tab.points-detail', {
       url: '/points/detail/:direction/:fbName',
       views: {

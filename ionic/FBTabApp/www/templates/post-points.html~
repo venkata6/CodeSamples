@@ -35,7 +35,7 @@
  <br> 
  <div class="row">    
         <div class="col text-center">       
- <button  class="button button-positive" ui-sref="tab.post_points">
+ <button  class="button button-positive" ui-sref="tab.home">
       Submit
     </button>     
      </div>

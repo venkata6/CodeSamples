@@ -58,6 +58,30 @@ angular.module('starter.controllers', [])
    */ 
 })
 
+.controller('PointsPostCtrl', function ($scope, $stateParams, OpenFB, $rootScope) {
+    //alert("friends ctrl");
+   $scope.currentDate = new Date();
+    
+ /*  $scope.forSelect ='';    
+  
+    $rootScope.friendsList.sort(function(a, b){
+        var nameA = a.toLowerCase(),
+            nameB = b.toLowerCase();
+        if (nameA < nameB) { //sort string ascending                                                                                                                                 
+            return -1;
+        }
+        if (nameA > nameB) {
+            return 1;
+        }
+        return 0; //default return value (no sorting)                                                                                                                                
+    });
+   $rootScope.friendsList.each(function(index, Element) {
+        $scope.forSelect += '<option value="' + Element.name + '">' + Element.name +'</option>';
+    });
+    alert($scope.forSelect);
+   */ 
+})
+
 
 
 .controller('PointsCtrl', function ($scope, $stateParams, OpenFB, $rootScope) {
