@@ -56,8 +56,9 @@ $rootScope.$on('$stateNotFound',function(event, unfoundState, fromState, fromPar
 
   $rootScope.$on('$stateChangeStart', function(event, toState) {
       if (toState.name !== "login" && toState.name !== "logout" && !$window.sessionStorage['fbtoken']) {
-          $state.go('login');
           event.preventDefault();
+          $state.go('login');
+          
       }
   });
 
@@ -145,6 +146,7 @@ $rootScope.$on('$stateNotFound',function(event, unfoundState, fromState, fromPar
 
   // if none of the above states are matched, use this as the fallback
   // $urlRouterProvider.otherwise('/tab/account');
-  $urlRouterProvider.otherwise('/tab/home');
+  //$urlRouterProvider.otherwise('/tab/home');
+    $urlRouterProvider.otherwise('login');
 
 });
