@@ -64,8 +64,8 @@ angular.module('starter.controllers', [])
     //alert("friends ctrl");
     OpenFB.get("/me/friends", {limit: 50,fields: 'id,name,first_name,picture.width(120).height(120)'})
         .success(function (result) {
-		//console.log("in pointsCtrl - success");
-		//console.log(result.data);
+	    console.log("in pointsCtrl - success");
+            console.log(result.data);
             $rootScope.friendsFBHash = new Object();
             //$rootScope.friendsList = [];
             for ( var i=0; i < result.data.length; i++) {
@@ -98,9 +98,9 @@ angular.module('starter.controllers', [])
     //alert(JSON.stringify(angular.element(document.body).scope()));
     OpenFB.get("/me", {fields: 'id,name,first_name,picture.width(120).height(120)'})
         .success(function (result) {
-		//console.log("meCtrl-success");
+		console.log("meCtrl-success");
             //$scope.kkData = kkService.save({user: $scope.me.name},{id: $scope.me.id}  );
-            //console.log(JSON.stringify($scope.kkData));
+            console.log(JSON.stringify($scope.kkData));
             // Simple POST request example (passing data) :
             var str = 'https://karmakorner.co/kk/webapi/people/getPoints/';
             str += $scope.me.name + '/' + $scope.me.id;
@@ -213,8 +213,7 @@ function calculatePoints($scope) {
         sortedList.sort(function(a, b){
             var pointsA = a.points;
             var pointsB = b.points;
-            if (pointsA > pointsB) { //sort string descending 
-                return -1;
+            if (pointsA > pointsB) { //sort string descending                                                                     return -1;
             }
             if (pointsA < pointsB) {
                 return 1;
