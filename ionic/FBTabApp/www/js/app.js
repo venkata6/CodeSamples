@@ -6,7 +6,7 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'openfb', 'starter.controllers', 'starter.services'])
-
+    
 .run(function ($rootScope, $state, $ionicPlatform, $window, OpenFB) {
 	//OpenFB.init('221283828060895','https://www.facebook.com/connect/login_success.html');
 	OpenFB.init('221283828060895','http://localhost:8100/oauthcallback.html');
@@ -67,10 +67,17 @@ $rootScope.$on('$stateNotFound',function(event, unfoundState, fromState, fromPar
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
 
+.config(function($stateProvider, $urlRouterProvider,$httpProvider) {
+
+   // We need to setup some parameters for http requests
+   // These three lines are all you need for CORS support
+   //$httpProvider.defaults.useXDomain = true;
+   //$httpProvider.defaults.withCredentials = true;
+   //delete $httpProvider.defaults.headers.common['X-Requested-With'];
+    
   // Ionic uses AngularUI Router which uses the concept of states
-  // Learn more here: https://github.com/angular-ui/ui-router
+  // Learn more here: h ttps://github.com/angular-ui/ui-router
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider

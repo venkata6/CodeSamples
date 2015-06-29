@@ -14,6 +14,8 @@
         "/Users/venkat/work/CodeSamples/ionic/FBTabApp/platforms/android/cordova/lib/spawn.js",
         "/Users/venkat/work/CodeSamples/ionic/FBTabApp/platforms/android/platform_www/cordova-js-src/exec.js",
         "/Users/venkat/work/CodeSamples/ionic/FBTabApp/www/lib/ionicOLD/js/angular-ui/angular-ui-router.min.js",
-        "/Users/venkat/work/CodeSamples/ionic/FBTabApp/platforms/android/platform_www/cordova-js-src/platform.js"
+        "/Users/venkat/work/CodeSamples/ionic/FBTabApp/platforms/android/platform_www/cordova-js-src/platform.js",
+        "/Users/venkat/work/CodeSamples/ionic/FBTabApp/www/js/app.js",
+        "/Users/venkat/work/CodeSamples/ionic/FBTabApp/platforms/ios/cordova/lib/check_reqs.js"
     ]
 }

@@ -58,101 +58,73 @@ angular.module('starter.controllers', [])
    */ 
 })
 
-.controller('PointsPostCtrl', function ($scope, $stateParams, OpenFB, $rootScope) {
+.controller('PointsPostCtrl', function ($scope, $stateParams, OpenFB,$http, $rootScope) {
     //alert("friends ctrl");
    $scope.currentDate = new Date();
+    console.log("in post points ");
+    var uri = 'https://karmakorner.co/kk/webapi/people/postPoints/';
+    var data = {} ;
+    data["nameFrom"] = $rootScope.me.name;
+    data["idFrom"] =  $rootScope.me.id;
+    data["nameTo"] = 'Sony Jose';
+    data["points"] = '10';
+    data["notes"] = 'test from mobile';
+    //data["date"] = nil;
+
+    var data1 = JSON.stringify(data);
+    /*
+    var comment = $('#comment').val();
+    var kkLink = '<a href="https://apps.facebook.com/karmakorner/">send using karmakorner</a>';
+    var friendTagId = friendCache.taggableFriendMap[data["nameTo"]];
+    var commentText = comment ; //+ ' - ' + kkLink;                                                                   var checked = $('#postToFB').prop('checked') ; 
+    */
     
- /*  $scope.forSelect ='';    
-  
-    $rootScope.friendsList.sort(function(a, b){
-        var nameA = a.toLowerCase(),
-            nameB = b.toLowerCase();
-        if (nameA < nameB) { //sort string ascending                                                                                                                                 
-            return -1;
-        }
-        if (nameA > nameB) {
-            return 1;
-        }
-        return 0; //default return value (no sorting)                                                                                                                                
-    });
-   $rootScope.friendsList.each(function(index, Element) {
-        $scope.forSelect += '<option value="' + Element.name + '">' + Element.name +'</option>';
-    });
-    alert($scope.forSelect);
-   */ 
+    
+    console.log(data1);
+    
+    var headers = {
+            //'Access-Control-Allow-Origin' : '*',
+            //'Access-Control-Allow-Methods' : 'POST, GET, OPTIONS',
+            //'Content-Type': 'application/json',
+            //'Accept': 'application/json'
+        };
+    
+    var req = {
+        method: 'POST',
+        url: uri,
+        headers: headers ,
+        data: data1 
+    }
+    console.log(req);
+    $http(req).
+        success (function( retdata ) { 
+            console.log("sucess posting data");
+        }).
+        error( function(xhr, status, error) {                                                                                 console.log("Error:posting data");
+          });
+    
+/*     $.ajax( {
+        contentType: 'application/json',
+        type: "POST",
+        data: data1,
+        dataType: 'json',
+        url : uri 
+      });   */
 })
 
 
 
 .controller('PointsCtrl', function ($scope, $stateParams, OpenFB, $rootScope) {
     //alert("friends ctrl");
-    OpenFB.get("/me/friends", {limit: 50,fields: 'id,name,first_name,picture.width(120).height(120)'})
-        .success(function (result) {
-		//console.log("in pointsCtrl - success");
-		//console.log(result.data);
-            $rootScope.friendsFBHash = new Object();
-            //$rootScope.friendsList = [];
-            for ( var i=0; i < result.data.length; i++) {
-                $rootScope.friendsFBHash[result.data[i].name]=result.data[i];
-              //  $rootScope.friendsList.push(result.data[i].name);
-            }
-            
-            for ( var i=0; i < $rootScope.sortedListTo.length; i++) {
-                var name = $rootScope.sortedListTo[i].name;
-                var fbdata = $rootScope.friendsFBHash[name];
-                $rootScope.sortedListTo[i].fbdata=fbdata; // load the data from FB 
-            }
-        
-            for ( var i=0; i < $rootScope.sortedListFrom.length; i++) {
-                var name = $rootScope.sortedListFrom[i].name;
-                var fbdata = $rootScope.friendsFBHash[name];
-                $rootScope.sortedListFrom[i].fbdata=fbdata; // load the data from FB 
-            }
-           // $rootScope.friends = result.data;
-         //alert(JSON.stringify($scope.friends)) ;
-        })
-        .error(function(data) {
-			    console.log("in pointsCtrl - failure");
-            //alert(data.error.message);
-        });
+    loadFriendsPoints($rootScope);
 })
 
 .controller('MeCtrl', function ($scope, $stateParams, OpenFB,kkService,$http, $rootScope) {
-    //alert(angular.element(e).injector().get('kkService'));
-    //alert(JSON.stringify(angular.element(document.body).scope()));
-    OpenFB.get("/me", {fields: 'id,name,first_name,picture.width(120).height(120)'})
-        .success(function (result) {
-		//console.log("meCtrl-success");
-            //$scope.kkData = kkService.save({user: $scope.me.name},{id: $scope.me.id}  );
-            //console.log(JSON.stringify($scope.kkData));
-            // Simple POST request example (passing data) :
-            var str = 'https://karmakorner.co/kk/webapi/people/getPoints/';
-            str += $scope.me.name + '/' + $scope.me.id;
-            //alert(str);
-            $http({
-                method: 'POST',
-                url:str 
-                }).
-              success(function(data, status, headers, config) {
-                $rootScope.kkData=data;
-                calculatePoints($rootScope);
-                // this callback will be called asynchronously
-                // when the response is available
-              }).
-              error(function(data, status, headers, config) {
-                //alert(status);
-                // called asynchronously if an error occurs
-                // or server returns response with an error status.
-              });   
-        })
-        .error(function(data) {
-		            console.log("meCtrl-failure");
-			    //alert(data.error.message);
-        });
+    getFriends(OpenFB,$rootScope,function(){
+                        loadMe(OpenFB, $http, $rootScope);
+                    });
+    
 })
-
-
-// .controller('DashCtrl', function($scope) {})
 
 .controller('ChatsCtrl', function($scope /*, Chats */) {
   $scope.chats = Chats.all();
@@ -172,6 +144,35 @@ angular.module('starter.controllers', [])
     enableFriends: true
   };
 });
+
+function loadMe(OpenFB, $http, $rootScope) {
+    OpenFB.get("/me", {fields: 'id,name,first_name,picture.width(120).height(120)'})
+        .success(function (result) {
+		console.log("/me success");
+        var str = 'https://karmakorner.co/kk/webapi/people/getPoints/';
+        str += $rootScope.me.name + '/' + $rootScope.me.id;
+        var data1 = '{"friends":' + JSON.stringify($rootScope.friendsList) + '}';
+            $http({
+                method: 'POST',
+                url:str,
+                data:data1
+                }).
+              success(function(data, status, headers, config) {
+                $rootScope.kkData=data;
+                calculatePoints($rootScope);
+       
+              }).
+              error(function(data, status, headers, config) {
+                //alert(status);
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+              });   
+        })
+        .error(function(data) {
+		            console.log("meCtrl-failure");
+			    //alert(data.error.message);
+        });
+}
 
 function loadDetails( $scope, fbName, direction){
     var data = $scope.kkData; 
@@ -200,6 +201,62 @@ function loadDetails( $scope, fbName, direction){
 
 }
 
+// this function will get the friends list if we have the permissions                                                                                                                
+function getFriends(OpenFB,$rootScope,callback) {
+
+// We need two API calls to Facebook because FB changed the API in graph 2.0                                                                                                         
+// to get friends LIST is tough now                                                                                                                                                  
+// for any games , first call with /me/invitable_friends and /me/friends                                                                                                             
+// when a friends never played your game ( here karmakorner )  "me/invitable_friends" will give a list in which all friends will be there                                            
+// your friends starts playing your game ( here karmakorner ) his name will come in "/me/friends" list ,( and not in "me/invitable_friends"                                          
+//                                                                                                               
+    OpenFB.get("/me/friends", {limit: 50,fields: 'id,name,first_name,picture.width(120).height(120)'})
+        .success(function (result) {
+		console.log("in /me/friends - success");
+		//console.log(result.data);
+            $rootScope.friendsFBHash = new Object();
+            $rootScope.friendsList = [];
+            for ( var i=0; i < result.data.length; i++) {
+                $rootScope.friendsFBHash[result.data[i].name]=result.data[i];
+                $rootScope.friendsList.push(result.data[i].name);
+            }
+            
+        })
+        .error(function(data) {
+			    console.log("in pointsCtrl - failure");
+            //alert(data.error.message);
+        });           
+               
+    OpenFB.get("/me/invitable_friends", {limit: 50,fields: 'id,name,first_name,picture.width(120).height(120)'})
+        .success(function (result) {
+		console.log("in me/invitable_friends - success");
+		    for ( var i=0; i < result.data.length; i++) {
+                $rootScope.friendsFBHash[result.data[i].name]=result.data[i];
+                $rootScope.friendsList.push(result.data[i].name);
+            }
+          callback();        
+        })
+        .error(function(data) {
+			    console.log("in pointsCtrl - failure");
+            //alert(data.error.message);
+        });        
+    
+}
+
+function loadFriendsPoints($rootScope) {
+           for ( var i=0; i < $rootScope.sortedListTo.length; i++) {
+                var name = $rootScope.sortedListTo[i].name;
+                var fbdata = $rootScope.friendsFBHash[name];
+                $rootScope.sortedListTo[i].fbdata=fbdata; // load the data from FB 
+            }
+        
+            for ( var i=0; i < $rootScope.sortedListFrom.length; i++) {
+                var name = $rootScope.sortedListFrom[i].name;
+                var fbdata = $rootScope.friendsFBHash[name];
+                $rootScope.sortedListFrom[i].fbdata=fbdata; // load the data from FB 
+            }   
+    
+}
 
 function calculatePoints($scope) {
 
