@@ -37,25 +37,26 @@ angular.module('starter.controllers', [])
 .controller('PointsGiveCtrl', function ($scope, $stateParams, OpenFB, $rootScope) {
     //alert("friends ctrl");
    $scope.currentDate = new Date();
-    
- /*  $scope.forSelect ='';    
-  
-    $rootScope.friendsList.sort(function(a, b){
-        var nameA = a.toLowerCase(),
-            nameB = b.toLowerCase();
-        if (nameA < nameB) { //sort string ascending                                                                                                                                 
-            return -1;
-        }
-        if (nameA > nameB) {
-            return 1;
-        }
-        return 0; //default return value (no sorting)                                                                                                                                
-    });
-   $rootScope.friendsList.each(function(index, Element) {
-        $scope.forSelect += '<option value="' + Element.name + '">' + Element.name +'</option>';
-    });
-    alert($scope.forSelect);
-   */ 
+   
+   var data = [] ;    
+   for ( var i=0; i < $rootScope.friendsList.length; i++) {  
+       data.push ( { id :  i+1 ,
+                     nmPlaca : $rootScope.friendsList[i] 
+                   } );
+       //data[i]=o;
+       //data[i] =  '{id:' + (i+1) + ',nmPlaca:' + "'" + $rootScope.friendsList[i] + "'}" ;
+       
+   }
+    var data1 = [{id:1,nmPlaca:'IKC-1394'},{id:2,nmPlaca:'IKY-5437'},{id:3,nmPlaca:'IKC-1393'},{id:4,nmPlaca:'IKI-5437'},{id:5,nmPlaca:'IOC-8749'},{id:6,nmPlaca:'IMG-6509'}];
+    $scope.veiculos = data;
+    $scope.testa = function(){
+      alert($scope.veiculo.nmPlaca);
+    }
+
+   $scope.selectFriend = function()
+    { 
+        console.log("hello controllers");   
+   }
 })
 
 .controller('PointsPostCtrl', function ($scope, $stateParams, OpenFB,$http, $rootScope) {
@@ -103,13 +104,7 @@ angular.module('starter.controllers', [])
         error( function(xhr, status, error) {                                                                                 console.log("Error:posting data");
           });
     
-/*     $.ajax( {
-        contentType: 'application/json',
-        type: "POST",
-        data: data1,
-        dataType: 'json',
-        url : uri 
-      });   */
+
 })
 
 
