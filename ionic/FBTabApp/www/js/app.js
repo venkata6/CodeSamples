@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'openfb', 'starter.controllers', 'starter.services','ionicSelect'])
+angular.module('starter', ['ionic', 'openfb', 'starter.controllers', 'starter.services','ionSearch'])
     
 .run(function ($rootScope, $state, $ionicPlatform, $window, OpenFB) {
 	//OpenFB.init('221283828060895','https://www.facebook.com/connect/login_success.html');

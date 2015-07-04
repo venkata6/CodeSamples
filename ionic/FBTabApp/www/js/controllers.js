@@ -41,17 +41,10 @@ angular.module('starter.controllers', [])
    var data = [] ;    
    for ( var i=0; i < $rootScope.friendsList.length; i++) {  
        data.push ( { id :  i+1 ,
-                     nmPlaca : $rootScope.friendsList[i] 
+                     name : $rootScope.friendsList[i] 
                    } );
-       //data[i]=o;
-       //data[i] =  '{id:' + (i+1) + ',nmPlaca:' + "'" + $rootScope.friendsList[i] + "'}" ;
-       
    }
-    var data1 = [{id:1,nmPlaca:'IKC-1394'},{id:2,nmPlaca:'IKY-5437'},{id:3,nmPlaca:'IKC-1393'},{id:4,nmPlaca:'IKI-5437'},{id:5,nmPlaca:'IOC-8749'},{id:6,nmPlaca:'IMG-6509'}];
-    $scope.veiculos = data;
-    $scope.testa = function(){
-      alert($scope.veiculo.nmPlaca);
-    }
+   $scope.friends = data;
 
    $scope.selectFriend = function()
     { 
