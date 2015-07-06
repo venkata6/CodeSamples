@@ -1,0 +1,35 @@
+<ion-view view-title="Give Points">
+
+<ion-nav-bar class="nav-title-slide-ios7 bar-positive">
+      <ion-nav-back-button class="button-icon ion-arrow-left-c">
+      </ion-nav-back-button>
+</ion-nav-bar>    
+<ion-nav-view animation="slide-left-right"></ion-nav-view>
+    
+<ion-content class="padding">
+<!-- <div class="list list-inset">  -->
+ <br>
+<!--
+
+ 
+ <!-- simpler example -->
+       <ion-list>
+          <div class="bar bar-header item-input-inset">
+             <ion-search placeholder="Search a friend" filter="search"></ion-search>
+         </div>
+         <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="friend in friends | filter:search.value" type="item-text-wrap" href="#/tab/give_points/{{friend.name}}">
+        <h2>{{friend.name}}</h2>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>   
+    <!--       <div class="list">
+            <div ng-repeat="friend in friends | filter:search.value" class="item">
+                {{friend.name}}
+              </div>
+        </div>  -->
+    </ion-list>
+ <!-- simpler example  -->   
+    
+     
+<!-- </div>  LIST -->  
+  </ion-content>    
+</ion-view>

@@ -1,0 +1,49 @@
+<ion-view view-title="Give Points">
+
+<ion-nav-bar class="nav-title-slide-ios7 bar-positive">
+      <ion-nav-back-button class="button-icon ion-arrow-left-c">
+      </ion-nav-back-button>
+</ion-nav-bar>    
+<ion-nav-view animation="slide-left-right"></ion-nav-view>
+    
+<ion-content class="padding">
+<!-- <div class="list list-inset">  -->
+ <br>
+
+ <label class="item item-input">
+    <input type="text" ng-model="friend" >
+  </label>
+    
+<!-- </label>  -->     
+  
+ <label class="item item-input">
+    <input type="text" placeholder="Rate your thanks" ng-model="postObj.points">
+  </label>
+    
+  <label class="item item-input">
+    <textarea placeholder="Description" ng-model="postObj.desc"></textarea>
+  </label>
+     
+   <label class="item item-input">
+     <input type="date" ng-model="postObj.date">
+   </label>
+     
+  <li class="item item-checkbox">
+     <label class="checkbox">
+       <input type="checkbox" checked="checked">
+     </label>
+     Post description to facebook?
+  </li>     
+ <br>
+ <br> 
+ <div class="row">    
+        <div class="col text-center">       
+ <button  class="button button-positive" ng-click="postPoints()">
+      Submit
+    </button>     
+     </div>
+     </div>
+     
+<!-- </div>  LIST -->  
+  </ion-content>    
+</ion-view>

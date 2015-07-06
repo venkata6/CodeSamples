@@ -34,6 +34,25 @@ angular.module('starter.controllers', [])
 
 })
 
+
+
+.controller('PointsGiveCtrl-2', function ($scope, $stateParams, $state, OpenFB, $rootScope) {
+    $scope.friend = $stateParams.fbName ;
+    var postObj = { points:"",desc:"",date:""};
+    $scope.postObj = postObj;
+    $scope.postPoints = function()
+    { 
+       $rootScope.forpost_points = $scope.postObj.points;
+       $rootScope.forpost_friend = $scope.friend;
+       $rootScope.forpost_notes = $scope.postObj.desc;
+       $rootScope.forpost_date = $scope.postObj.date;    
+       $state.go('tab.post_points');
+           
+    }
+    
+})
+
+
 .controller('PointsGiveCtrl', function ($scope, $stateParams, OpenFB, $rootScope) {
     //alert("friends ctrl");
    $scope.currentDate = new Date();
@@ -46,12 +65,30 @@ angular.module('starter.controllers', [])
    }
    $scope.friends = data;
 
-   $scope.selectFriend = function()
-    { 
-        console.log("hello controllers");   
-   }
+   
 })
 
+/*
+
+.controller('PointsGiveCtrl', ['$scope', '$rootScope', '$http', '$state',
+  function($scope, $rootScope, $http, $state) {
+      // $scope.friends = ['test','one'];
+      $scope.$watch("query.length", function(val) {
+      if (val > 0) {
+        var data = [] ;    
+        for ( var i=0; i < $rootScope.friendsList.length; i++) {  
+            data.push ( 
+                {   id :  i+1 ,
+                    name : $rootScope.friendsList[i] 
+                });
+        }
+        //$scope.friends = data;
+        $scope.friends = ['test','one'];  
+       };
+   });
+ }
+])
+*/
 .controller('PointsPostCtrl', function ($scope, $stateParams, OpenFB,$http, $rootScope) {
     //alert("friends ctrl");
    $scope.currentDate = new Date();
@@ -60,10 +97,10 @@ angular.module('starter.controllers', [])
     var data = {} ;
     data["nameFrom"] = $rootScope.me.name;
     data["idFrom"] =  $rootScope.me.id;
-    data["nameTo"] = 'Sony Jose';
-    data["points"] = '10';
-    data["notes"] = 'test from mobile';
-    //data["date"] = nil;
+    data["nameTo"] = $rootScope.forpost_friend;
+    data["points"] = $rootScope.forpost_points;
+    data["notes"] = $rootScope.forpost_notes;
+    data["date"] = $rootScope.forpost_date;
 
     var data1 = JSON.stringify(data);
     /*

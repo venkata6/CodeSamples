@@ -11,7 +11,7 @@ angular.module('starter', ['ionic', 'openfb', 'starter.controllers', 'starter.se
 	//OpenFB.init('221283828060895','https://www.facebook.com/connect/login_success.html');
 	OpenFB.init('221283828060895','http://localhost:8100/oauthcallback.html');
 
-	/*    
+  
 // DEBUG START -     
 $rootScope.$on('$stateChangeStart',function(event, toState, toParams, fromState, fromParams){
   console.log('$stateChangeStart to '+toState.to+'- fired when the transition begins. toState,toParams : \n',toState, toParams);
@@ -34,7 +34,7 @@ $rootScope.$on('$stateNotFound',function(event, unfoundState, fromState, fromPar
   console.log('$stateNotFound '+unfoundState.to+'  - fired when a state cannot be found by its name.');
   console.log(unfoundState, fromState, fromParams);
 });
-	*/
+
 // DEBUG END      
     
     
@@ -126,12 +126,21 @@ $rootScope.$on('$stateNotFound',function(event, unfoundState, fromState, fromPar
       url: '/give_points',
       views: {
         'tab-home': {
-          templateUrl: 'templates/give-points.html',
+          templateUrl: 'templates/give-points-1.html',
           controller: 'PointsGiveCtrl'
         }
       }
     }) 
-  .state('tab.post_points', {
+    .state('tab.give_points_2', {
+      url: '/give_points/:fbName',
+      views: {
+        'tab-home': {
+          templateUrl: 'templates/give-points-2.html',
+          controller: 'PointsGiveCtrl-2'
+        }
+      }
+    }) 
+   .state('tab.post_points', {
       url: '/post_points',
       views: {
         'tab-home': {

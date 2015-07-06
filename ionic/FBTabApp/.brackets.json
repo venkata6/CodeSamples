@@ -21,6 +21,16 @@
         "/Users/venkat/work/CodeSamples/ionic/FBTabApp/platforms/android/build/intermediates/assets/debug/www/lib/ionic/js/ionic.bundle.js",
         "/Users/venkat/work/CodeSamples/ionic/FBTabApp/platforms/ios/build/emulator/FBTabApp.app/www/js/ionicSelect.js",
         "/Users/venkat/work/CodeSamples/ionic/FBTabApp/platforms/ios/cordova/lib/clean.js",
-        "/Users/venkat/work/CodeSamples/ionic/FBTabApp/platforms/ios/cordova/lib/run.js"
+        "/Users/venkat/work/CodeSamples/ionic/FBTabApp/platforms/ios/cordova/lib/run.js",
+        "/Users/venkat/work/CodeSamples/ionic/FBTabApp/platforms/ios/cordova/lib/build.js",
+        "/Users/venkat/work/CodeSamples/ionic/FBTabApp/platforms/android/build/intermediates/assets/debug/www/lib/ionic/js/angular-ui/angular-ui-router.min.js",
+        "/Users/venkat/work/CodeSamples/ionic/FBTabApp/platforms/android/build/intermediates/assets/debug/www/lib/ionic/js/ionic.min.js",
+        "/Users/venkat/work/CodeSamples/ionic/FBTabApp/platforms/android/build/intermediates/assets/debug/www/lib/ionicOLD/js/angular/angular-animate.js",
+        "/Users/venkat/work/CodeSamples/ionic/FBTabApp/platforms/android/build/intermediates/assets/debug/www/lib/ionicOLD/js/angular/angular-animate.min.js",
+        "/Users/venkat/work/CodeSamples/ionic/FBTabApp/platforms/android/build/intermediates/assets/debug/www/lib/ionicOLD/js/angular/angular-resource.js",
+        "/Users/venkat/work/CodeSamples/ionic/FBTabApp/platforms/android/build/intermediates/assets/debug/www/lib/ionicOLD/js/angular/angular-resource.min.js",
+        "/Users/venkat/work/CodeSamples/ionic/FBTabApp/platforms/android/build/intermediates/assets/debug/www/lib/ionicOLD/js/angular/angular-sanitize.js",
+        "/Users/venkat/work/CodeSamples/ionic/FBTabApp/platforms/android/build/intermediates/assets/debug/www/lib/ionicOLD/js/angular/angular-sanitize.min.js",
+        "/Users/venkat/work/CodeSamples/ionic/FBTabApp/www/lib/ionic/js/angular-ui/angular-ui-router.js"
     ]
 }
