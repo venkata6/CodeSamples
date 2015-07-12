@@ -7,13 +7,13 @@
     
   <ion-content>
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in details" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="point in details" type="item-text-wrap" href="#/tab/points/detail/desc/{{point.id}}">
     <!--    <img ng-src="{{chat.face}}">  -->
-        <h2>Notes - {{chat.notes}}</h2>
-        <p>Points - {{chat.points}}</p>
+        <h2>Notes - {{point.notes}}</h2>
+        <p>Points - {{point.points}}</p>
         <i class="icon ion-chevron-right icon-accessory"></i>
 
-        <ion-option-button class="button-assertive" ng-click="remove(chat)">
+        <ion-option-button class="button-assertive" ng-click="remove(point)">
           Delete
         </ion-option-button>
       </ion-item>

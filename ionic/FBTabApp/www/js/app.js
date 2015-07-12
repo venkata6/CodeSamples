@@ -12,7 +12,10 @@ angular.module('starter', ['ionic', 'openfb', 'starter.controllers', 'starter.se
 	OpenFB.init('221283828060895','http://localhost:8100/oauthcallback.html');
 
   
+
 // DEBUG START -     
+
+/*    
 $rootScope.$on('$stateChangeStart',function(event, toState, toParams, fromState, fromParams){
   console.log('$stateChangeStart to '+toState.to+'- fired when the transition begins. toState,toParams : \n',toState, toParams);
 });
@@ -23,10 +26,7 @@ $rootScope.$on('$stateChangeError',function(event, toState, toParams, fromState,
 $rootScope.$on('$stateChangeSuccess',function(event, toState, toParams, fromState, fromParams){
   console.log('$stateChangeSuccess to '+toState.name+'- fired once the state transition is complete.');
 });
-// $rootScope.$on('$viewContentLoading',function(event, viewConfig){
-//   // runs on individual scopes, so putting it in "run" doesn't work.
-//   console.log('$viewContentLoading - view begins loading - dom not rendered',viewConfig);
-// });
+
 $rootScope.$on('$viewContentLoaded',function(event){
   console.log('$viewContentLoaded - fired after dom rendered',event);
 });
@@ -34,6 +34,7 @@ $rootScope.$on('$stateNotFound',function(event, unfoundState, fromState, fromPar
   console.log('$stateNotFound '+unfoundState.to+'  - fired when a state cannot be found by its name.');
   console.log(unfoundState, fromState, fromParams);
 });
+*/
 
 // DEBUG END      
     
@@ -50,20 +51,20 @@ $rootScope.$on('$stateNotFound',function(event, unfoundState, fromState, fromPar
       // org.apache.cordova.statusbar required
       StatusBar.styleLightContent();
     } 
-     //$state.go('login');  
-    //$location.path('/login');  
   });
 
     $rootScope.$on('$stateChangeStart', function(event, toState) {
       if (toState.name !== "login" && toState.name !== "logout" && !$window.sessionStorage['fbtoken']) {
           event.preventDefault();
           $state.go('login');
+          //$state.go('tab.home'); 
           
       }
   });
   
   $rootScope.$on('OAuthException', function() {
-      $state.go('login');
+      $state.go('login'); 
+      //$state.go('tab.home'); 
   });
 })
 
@@ -153,12 +154,20 @@ $rootScope.$on('$stateNotFound',function(event, unfoundState, fromState, fromPar
       url: '/points/detail/:direction/:fbName',
       views: {
         'tab-points': {
-          templateUrl: 'templates/chat-detail.html',
+          templateUrl: 'templates/points-detail.html',
           controller: 'PointsDetailCtrl'
         }
       }
     })
-
+    .state('tab.points-detail-desc', {
+      url: '/points/detail/desc/:id',
+      views: {
+        'tab-points': {
+          templateUrl: 'templates/points-detail-desc.html',
+          controller: 'PointsDetailDescCtrl'
+        }
+      }
+    })
   .state('tab.friends', {
     url: '/friends',
     views: {
@@ -172,6 +181,6 @@ $rootScope.$on('$stateNotFound',function(event, unfoundState, fromState, fromPar
   // if none of the above states are matched, use this as the fallback
   // $urlRouterProvider.otherwise('/tab/account');
   //$urlRouterProvider.otherwise('/tab/home');
-    $urlRouterProvider.otherwise('login');
+  $urlRouterProvider.otherwise('login');
 
 });

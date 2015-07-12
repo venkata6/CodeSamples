@@ -145,10 +145,10 @@ angular.module('starter.controllers', [])
 })
 
 .controller('MeCtrl', function ($scope, $stateParams, OpenFB,kkService,$http, $rootScope) {
+
     getFriends(OpenFB,$rootScope,function(){
                         loadMe(OpenFB, $http, $rootScope);
                     });
-    
 })
 
 .controller('ChatsCtrl', function($scope /*, Chats */) {
@@ -162,6 +162,10 @@ angular.module('starter.controllers', [])
   loadDetails($rootScope,$stateParams.fbName,$stateParams.direction);
   //alert($stateParams.fbId + " " + $stateParams.direction);
   //$scope.chat = Chats.get($stateParams.chatId);
+})
+
+.controller('PointsDetailDescCtrl', function($scope, $stateParams,$rootScope) {
+
 })
 
 .controller('AccountCtrl', function($scope) {

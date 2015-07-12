@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.ionicframework.fbtabapp220760" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
-  <name>FBTabApp</name>
+<widget id="com.ionicframework.karmakorner220760" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
+  <name>KarmaKorner</name>
   <description>
-        An Ionic Framework and Cordova project.
+        Remembering and thanking friends. Be Grateful.
     </description>
-  <author email="hi@ionicframework" href="http://ionicframework.com/">
-      Ionic Framework Team
+  <author email="avenkat@gmail.com" href="https://karmakorner.co/">
+      Venkatesh Arjunan
     </author>
   <content src="index.html"/>
   <access origin="*"/>
