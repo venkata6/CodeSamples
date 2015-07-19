@@ -279,9 +279,9 @@ function loadFriendsPoints($rootScope) {
            for ( var i=0; i < $rootScope.sortedListTo.length; i++) {
                 var name = $rootScope.sortedListTo[i].name;
                 var fbdata = $rootScope.friendsFBHash[name];
-                if ( fbdata.picture.data.url == null ) {
+                /*if ( fbdata.picture.data.url == null ) {
                     
-                }
+                }*/
                 $rootScope.sortedListTo[i].fbdata=fbdata; // load the data from FB 
                 
             }
