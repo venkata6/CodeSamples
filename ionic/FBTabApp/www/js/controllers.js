@@ -38,7 +38,7 @@ angular.module('starter.controllers', [])
 
 .controller('PointsGiveCtrl-2', function ($scope, $stateParams, $state, OpenFB, $rootScope) {
     $scope.friend = $stateParams.fbName ;
-    var postObj = { points:"",desc:"",date:"",fbchecked:true};
+    var postObj = { points:"",desc:"",date:new Date(),fbchecked:true};
     $scope.postObj = postObj;
     $scope.postPoints = function()
     { 
