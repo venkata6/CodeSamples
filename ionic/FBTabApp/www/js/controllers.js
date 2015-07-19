@@ -38,14 +38,15 @@ angular.module('starter.controllers', [])
 
 .controller('PointsGiveCtrl-2', function ($scope, $stateParams, $state, OpenFB, $rootScope) {
     $scope.friend = $stateParams.fbName ;
-    var postObj = { points:"",desc:"",date:""};
+    var postObj = { points:"",desc:"",date:"",fbchecked:true};
     $scope.postObj = postObj;
     $scope.postPoints = function()
     { 
        $rootScope.forpost_points = $scope.postObj.points;
        $rootScope.forpost_friend = $scope.friend;
        $rootScope.forpost_notes = $scope.postObj.desc;
-       $rootScope.forpost_date = $scope.postObj.date;    
+       $rootScope.forpost_date = $scope.postObj.date;
+       $rootScope.forpost_fbchecked = $scope.postObj.fbchecked;    
        $state.go('tab.post_points');
            
     }
@@ -103,14 +104,7 @@ angular.module('starter.controllers', [])
     data["date"] = $rootScope.forpost_date;
 
     var data1 = JSON.stringify(data);
-    /*
-    var comment = $('#comment').val();
-    var kkLink = '<a href="https://apps.facebook.com/karmakorner/">send using karmakorner</a>';
-    var friendTagId = friendCache.taggableFriendMap[data["nameTo"]];
-    var commentText = comment ; //+ ' - ' + kkLink;                                                                   var checked = $('#postToFB').prop('checked') ; 
-    */
-    
-    
+        
     console.log(data1);
     
     var headers = {
@@ -129,9 +123,18 @@ angular.module('starter.controllers', [])
     console.log(req);
     $http(req).
         success (function( retdata ) { 
-            console.log("sucess posting data");
-        }).
-        error( function(xhr, status, error) {                                                                                 console.log("Error:posting data");
+            console.log("sucess posting data to kk server, now posting to FB wall");
+            if (  $rootScope.forpost_fbchecked ) {
+                OpenFB.post("/me/feed", { message: $rootScope.forpost_notes})
+                .success(function (result) {
+	               console.log("successfully writing to FB wall")
+                })
+                .error(function(data) {
+		            console.log("Error writing to FB wall");
+                });
+            }
+        })
+        .error( function(xhr, status, error) {                                                                                 console.log("Error:posting data");
           });
     
 
@@ -276,7 +279,11 @@ function loadFriendsPoints($rootScope) {
            for ( var i=0; i < $rootScope.sortedListTo.length; i++) {
                 var name = $rootScope.sortedListTo[i].name;
                 var fbdata = $rootScope.friendsFBHash[name];
+                if ( fbdata.picture.data.url == null ) {
+                    
+                }
                 $rootScope.sortedListTo[i].fbdata=fbdata; // load the data from FB 
+                
             }
         
             for ( var i=0; i < $rootScope.sortedListFrom.length; i++) {
