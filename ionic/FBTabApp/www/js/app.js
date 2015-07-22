@@ -160,7 +160,7 @@ $rootScope.$on('$stateNotFound',function(event, unfoundState, fromState, fromPar
       }
     })
     .state('tab.points-detail-desc', {
-      url: '/points/detail/desc/:id',
+      url: '/points/detail/desc/:msgId',
       views: {
         'tab-points': {
           templateUrl: 'templates/points-detail-desc.html',

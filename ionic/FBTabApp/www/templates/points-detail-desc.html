@@ -2,14 +2,28 @@
 <ion-view cache-view="false" view-title="Points Detail">
 
 <ion-nav-buttons side="left">
-    <button class="button button-icon icon  ion-chevron-left" ui-sref="tab.points" ></button>
+    <button class="button button-icon icon  ion-chevron-left" ui-sref="tab.points-detail" ></button>
 </ion-nav-buttons>    
     
   <ion-content>
-     this is the detail desc of the points here 
-      You can repost the FB wall again 
-      You can see the date of the event also 
-      Enjoy!
+  <label class="item item-input">
+    <input type="text" ng-model="fbname" >
+  </label>
+    
+<!-- </label>  -->     
+  
+ <label class="item item-input">
+    <input type="text"  ng-model="detailsDesc.points">
+  </label>
+    
+  <label class="item item-input">
+    <textarea placeholder="Description" ng-model="detailsDesc.notes"></textarea>
+  </label>
+     
+   <label class="item item-input">
+     <input type="date" ng-model="detailsDesc.date">
+   </label>
+     
       
   </ion-content>
 </ion-view>

@@ -124,6 +124,7 @@ angular.module('starter.controllers', [])
     $http(req).
         success (function( retdata ) { 
             console.log("sucess posting data to kk server, now posting to FB wall");
+            loadPoints(OpenFB, $http, $rootScope);
             if (  $rootScope.forpost_fbchecked ) {
                 OpenFB.post("/me/feed", { message: $rootScope.forpost_notes})
                 .success(function (result) {
@@ -163,12 +164,12 @@ angular.module('starter.controllers', [])
 
 .controller('PointsDetailCtrl', function($scope, $stateParams,$rootScope) {
   loadDetails($rootScope,$stateParams.fbName,$stateParams.direction);
-  //alert($stateParams.fbId + " " + $stateParams.direction);
-  //$scope.chat = Chats.get($stateParams.chatId);
+  $rootScope.direction=$stateParams.direction;
+  $rootScope.fbname=$stateParams.fbName;
 })
 
 .controller('PointsDetailDescCtrl', function($scope, $stateParams,$rootScope) {
-
+  loadDetailsDesc( $rootScope,$rootScope.fbname,$rootScope.direction,$stateParams.msgId);    
 })
 
 .controller('AccountCtrl', function($scope) {
@@ -176,6 +177,27 @@ angular.module('starter.controllers', [])
     enableFriends: true
   };
 });
+
+function loadPoints(OpenFB, $http, $rootScope) {
+    var str = 'https://karmakorner.co/kk/webapi/people/getPoints/';
+    str += $rootScope.me.name + '/' + $rootScope.me.id;
+    var data1 = '{"friends":' + JSON.stringify($rootScope.friendsList) + '}';
+        $http({
+            method: 'POST',
+            url:str,
+            data:data1
+        }).
+        success(function(data, status, headers, config) {
+           $rootScope.kkData=data;
+           calculatePoints($rootScope);
+       
+        }).
+        error(function(data, status, headers, config) {
+                //alert(status);
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+        });   
+}
 
 function loadMe(OpenFB, $http, $rootScope) {
     OpenFB.get("/me", {fields: 'id,name,first_name,picture.width(120).height(120)'})
@@ -205,6 +227,31 @@ function loadMe(OpenFB, $http, $rootScope) {
 			    //alert(data.error.message);
         });
 }
+
+
+function loadDetailsDesc( $scope, fbName, direction, msgId){
+    var data = $scope.kkData; 
+    var detailsDesc ;
+    if ( direction == "to") {
+        for ( var i=0; i < data.pointsToList.length; i++) {
+            Element =  data.pointsToList[i];
+            if ( Element.nameTo == fbName && Element.msg_id == msgId)  {
+                detailsDesc=Element;
+            }
+        }
+    }
+
+    if ( direction == "from") {
+        for ( var i=0; i < data.pointsFromList.length; i++) {
+            Element =  data.pointsFromList[i];
+            if ( Element.nameFrom == fbName && Element.msg_id == msgId)  {
+                detailsDesc=Element;
+            }
+        }
+    }
+    $scope.detailsDesc=detailsDesc;
+}
+
 
 function loadDetails( $scope, fbName, direction){
     var data = $scope.kkData; 
