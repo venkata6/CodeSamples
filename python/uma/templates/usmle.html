@@ -1,0 +1,20 @@
+<!doctype html>
+<title>USMLE test</title>
+<h1>US MLE test</h1>
+
+{% if name %}
+<h2>Hello {{ name }}!</h2>
+{% else %}
+<h2>Hello, World!</h2>
+{% endif %}
+<h3>you are going to get a good score ! </h3>
+
+{% block content %}
+<form action="" method="post" name="login">
+  {{ form.hidden_tag() }}
+  <p>
+     Question: {{ form.question(size=80, value=vo.question)}} <br>
+  </p> Answer: {{ form.answer (size=100, value="")  }}  <input type="submit" value="Submit"></p>
+  </p> Prev Q and A : {{ form.answer (size=100, value=vo.prevanswer) }} </p>
+</form>
+{% endblock %}
