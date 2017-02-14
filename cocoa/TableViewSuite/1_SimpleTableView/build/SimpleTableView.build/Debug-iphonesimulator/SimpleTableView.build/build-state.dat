@@ -1,407 +1,0 @@
-TSimpleTableView
-v7
-r0
-t314125451.206763
-cCheck dependencies
-cProcessInfoPlistFile /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app/Info.plist Info.plist
-cCopyStringsFile /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app/en.lproj/Localizable.strings en.lproj/Localizable.strings
-cCompileXIB /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/en.lproj/MainWindow.xib
-cCpResource build/Debug-iphonesimulator/SimpleTableView.app/Default.png images/Default.png
-cCpResource build/Debug-iphonesimulator/SimpleTableView.app/Icon-72.png images/Icon-72.png
-cCpResource build/Debug-iphonesimulator/SimpleTableView.app/Icon-Small-50.png images/Icon-Small-50.png
-cCpResource build/Debug-iphonesimulator/SimpleTableView.app/Icon-Small.png images/Icon-Small.png
-cCpResource build/Debug-iphonesimulator/SimpleTableView.app/Icon-Small@2x.png images/Icon-Small@2x.png
-cCpResource build/Debug-iphonesimulator/SimpleTableView.app/Icon.png images/Icon.png
-cCpResource build/Debug-iphonesimulator/SimpleTableView.app/Icon@2x.png images/Icon@2x.png
-cCpResource build/Debug-iphonesimulator/SimpleTableView.app/iTunesArtwork images/iTunesArtwork
-cProcessPCH /var/folders/n8/n8QVMtgmFKSsOI5TOhStA++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/SimpleTableView_Prefix-byaormzgqsftueajlqggjwavvhcn/SimpleTableView_Prefix.pch.gch SimpleTableView_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/SimpleTableView.build/Debug-iphonesimulator/SimpleTableView.build/Objects-normal/i386/main.o /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/SimpleTableView.build/Debug-iphonesimulator/SimpleTableView.build/Objects-normal/i386/SimpleTableViewAppDelegate.o /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/Classes/SimpleTableViewAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/SimpleTableView.build/Debug-iphonesimulator/SimpleTableView.build/Objects-normal/i386/RootViewController.o /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/Classes/RootViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cLd /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app/SimpleTableView normal i386
-cGenerateDSYMFile /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app.dSYM /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app/SimpleTableView
-cTouch /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk
-c000000004C494D410000000000000132
-t1279872321
-s306
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
-c000000004BFDFE39000000000027C7D0
-t1274936889
-s2607056
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
-c000000004BFDFE7C000000000029D5D0
-t1274936956
-s2741712
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
-c000000004BFDFE6E0000000000001466
-t1274936942
-s5222
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
-c000000004C0470BB00000000000009CD
-t1275359419
-s2509
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
-c000000004C0471620000000001D47210
-t1275359586
-s30700048
-
-N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/Classes/RootViewController.h
-c000000004C23C3190000000000000A7E
-t1277412121
-s2686
-
-N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/Classes/RootViewController.m
-c000000004C23C3190000000000001029
-t1277412121
-s4137
-i"RootViewController.h"
-i"SimpleTableViewAppDelegate.h"
-
-N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/Classes/SimpleTableViewAppDelegate.h
-c000000004C23C3190000000000000B08
-t1277412121
-s2824
-
-N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/Classes/SimpleTableViewAppDelegate.m
-c000000004C23C3190000000000000E91
-t1277412121
-s3729
-i"SimpleTableViewAppDelegate.h"
-i"RootViewController.h"
-
-N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/SimpleTableView_Prefix.pch
-c000000004A21E53E00000000000000C7
-t1243735358
-s199
-i<Foundation/Foundation.h>
-i<UIKit/UIKit.h>
-
-N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app
-t1292432651
-s476
-
-N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app.dSYM
-t1292432651
-s102
-
-N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app/Default.png
-t1292432646
-s2120
-
-N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app/Icon-72.png
-t1292432646
-s1063
-
-N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app/Icon-Small-50.png
-t1292432646
-s992
-
-N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app/Icon-Small.png
-t1292432646
-s918
-
-N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app/Icon-Small@2x.png
-t1292432646
-s1010
-
-N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app/Icon.png
-t1292432646
-s1007
-
-N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app/Icon@2x.png
-t1292432646
-s1252
-
-N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app/Info.plist
-t1292432645
-s757
-
-N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app/PkgInfo
-t1292432645
-s8
-
-N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app/SimpleTableView
-t1292432651
-s17756
-
-N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app/en.lproj/Localizable.strings
-t1292432646
-s56
-
-N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app/en.lproj/MainWindow.nib
-t1292432648
-s968
-
-N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app/iTunesArtwork
-t1292432646
-s5188
-
-N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/SimpleTableView.build/Debug-iphonesimulator/SimpleTableView.build/Objects-normal/i386/RootViewController.o
-t1292432650
-s40064
-
-N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/SimpleTableView.build/Debug-iphonesimulator/SimpleTableView.build/Objects-normal/i386/SimpleTableView.LinkFileList
-c000000004D08F50500000000000001F2
-t1292432645
-s498
-
-N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/SimpleTableView.build/Debug-iphonesimulator/SimpleTableView.build/Objects-normal/i386/SimpleTableViewAppDelegate.o
-t1292432650
-s49340
-
-N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/SimpleTableView.build/Debug-iphonesimulator/SimpleTableView.build/Objects-normal/i386/main.o
-t1292432650
-s6336
-
-N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/en.lproj/Localizable.strings
-c000000004A21E53E000000000000003E
-t1243735358
-s62
-
-N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/en.lproj/MainWindow.xib
-c000000004C17F8D50000000000001D0F
-t1276639445
-s7439
-
-N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/images/Default.png
-c000000004C238ECC0000000000000848
-t1277398732
-s2120
-
-N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/images/Icon-72.png
-c000000004C238ECC0000000000000427
-t1277398732
-s1063
-
-N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/images/Icon-Small-50.png
-c000000004C238ECC00000000000003E0
-t1277398732
-s992
-
-N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/images/Icon-Small.png
-c000000004C238ECC0000000000000396
-t1277398732
-s918
-
-N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/images/Icon-Small@2x.png
-c000000004C238ECC00000000000003F2
-t1277398732
-s1010
-
-N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/images/Icon.png
-c000000004C238ECC00000000000003EF
-t1277398732
-s1007
-
-N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/images/Icon@2x.png
-c000000004C238ECC00000000000004E4
-t1277398732
-s1252
-
-N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/images/iTunesArtwork
-c000000004C238ECC0000000000001444
-t1277398732
-s5188
-
-N/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/main.m
-c000000004C23C3190000000000000A66
-t1277412121
-s2662
-
-N/var/folders/n8/n8QVMtgmFKSsOI5TOhStA++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/SimpleTableView_Prefix-byaormzgqsftueajlqggjwavvhcn/SimpleTableView_Prefix.pch.gch
-t1292432650
-s15232016
-
-NInfo.plist
-c000000004C23A3D30000000000000490
-t1277404115
-s1168
-
-CCheck dependencies
-r0
-lSLF07#2@18"Check dependencies314125445#314125445#0(0"0(0#1#0"8627045568#0"0#
-
-CCompileC build/SimpleTableView.build/Debug-iphonesimulator/SimpleTableView.build/Objects-normal/i386/RootViewController.o /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/Classes/RootViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s314125450.685652
-e314125450.762727
-r1
-xCompileC
-xbuild/SimpleTableView.build/Debug-iphonesimulator/SimpleTableView.build/Objects-normal/i386/RootViewController.o
-x/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/Classes/RootViewController.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@91"Compile /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/Classes/RootViewController.m314125450#314125450#0(0"0(0#0#83"/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/Classes/RootViewController.m8625895904#2327"    cd /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/SimpleTableView.build/Debug-iphonesimulator/SimpleTableView.build/SimpleTableView-generated-files.hmap -I/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/SimpleTableView.build/Debug-iphonesimulator/SimpleTableView.build/SimpleTableView-own-target-headers.hmap -I/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/SimpleTableView.build/Debug-iphonesimulator/SimpleTableView.build/SimpleTableView-all-target-headers.hmap -iquote /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/SimpleTableView.build/Debug-iphonesimulator/SimpleTableView.build/SimpleTableView-project-headers.hmap -F/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator -I/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/include -I/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/SimpleTableView.build/Debug-iphonesimulator/SimpleTableView.build/DerivedSources/i386 -I/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/SimpleTableView.build/Debug-iphonesimulator/SimpleTableView.build/DerivedSources -include /var/folders/n8/n8QVMtgmFKSsOI5TOhStA++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/SimpleTableView_Prefix-byaormzgqsftueajlqggjwavvhcn/SimpleTableView_Prefix.pch -c /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/Classes/RootViewController.m -o /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/SimpleTableView.build/Debug-iphonesimulator/SimpleTableView.build/Objects-normal/i386/RootViewController.o0#
-
-CCompileC build/SimpleTableView.build/Debug-iphonesimulator/SimpleTableView.build/Objects-normal/i386/SimpleTableViewAppDelegate.o /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/Classes/SimpleTableViewAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s314125450.525219
-e314125450.716216
-r1
-xCompileC
-xbuild/SimpleTableView.build/Debug-iphonesimulator/SimpleTableView.build/Objects-normal/i386/SimpleTableViewAppDelegate.o
-x/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/Classes/SimpleTableViewAppDelegate.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@99"Compile /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/Classes/SimpleTableViewAppDelegate.m314125450#314125450#0(0"0(0#0#91"/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/Classes/SimpleTableViewAppDelegate.m8626399456#2343"    cd /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/SimpleTableView.build/Debug-iphonesimulator/SimpleTableView.build/SimpleTableView-generated-files.hmap -I/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/SimpleTableView.build/Debug-iphonesimulator/SimpleTableView.build/SimpleTableView-own-target-headers.hmap -I/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/SimpleTableView.build/Debug-iphonesimulator/SimpleTableView.build/SimpleTableView-all-target-headers.hmap -iquote /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/SimpleTableView.build/Debug-iphonesimulator/SimpleTableView.build/SimpleTableView-project-headers.hmap -F/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator -I/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/include -I/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/SimpleTableView.build/Debug-iphonesimulator/SimpleTableView.build/DerivedSources/i386 -I/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/SimpleTableView.build/Debug-iphonesimulator/SimpleTableView.build/DerivedSources -include /var/folders/n8/n8QVMtgmFKSsOI5TOhStA++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/SimpleTableView_Prefix-byaormzgqsftueajlqggjwavvhcn/SimpleTableView_Prefix.pch -c /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/Classes/SimpleTableViewAppDelegate.m -o /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/SimpleTableView.build/Debug-iphonesimulator/SimpleTableView.build/Objects-normal/i386/SimpleTableViewAppDelegate.o0#
-
-CCompileC build/SimpleTableView.build/Debug-iphonesimulator/SimpleTableView.build/Objects-normal/i386/main.o /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s314125450.524091
-e314125450.685544
-r1
-xCompileC
-xbuild/SimpleTableView.build/Debug-iphonesimulator/SimpleTableView.build/Objects-normal/i386/main.o
-x/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/main.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@69"Compile /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/main.m314125450#314125450#0(0"0(0#0#61"/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/main.m8626921568#2291"    cd /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/SimpleTableView.build/Debug-iphonesimulator/SimpleTableView.build/SimpleTableView-generated-files.hmap -I/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/SimpleTableView.build/Debug-iphonesimulator/SimpleTableView.build/SimpleTableView-own-target-headers.hmap -I/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/SimpleTableView.build/Debug-iphonesimulator/SimpleTableView.build/SimpleTableView-all-target-headers.hmap -iquote /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/SimpleTableView.build/Debug-iphonesimulator/SimpleTableView.build/SimpleTableView-project-headers.hmap -F/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator -I/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/include -I/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/SimpleTableView.build/Debug-iphonesimulator/SimpleTableView.build/DerivedSources/i386 -I/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/SimpleTableView.build/Debug-iphonesimulator/SimpleTableView.build/DerivedSources -include /var/folders/n8/n8QVMtgmFKSsOI5TOhStA++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/SimpleTableView_Prefix-byaormzgqsftueajlqggjwavvhcn/SimpleTableView_Prefix.pch -c /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/main.m -o /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/SimpleTableView.build/Debug-iphonesimulator/SimpleTableView.build/Objects-normal/i386/main.o0#
-
-CCompileXIB /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/en.lproj/MainWindow.xib
-s314125445.593930
-e314125448.623159
-r1
-xCompileXIB
-x/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/en.lproj/MainWindow.xib
-lSLF07#2@34"CompileXIB en.lproj/MainWindow.xib314125445#314125448#0(0"0(0#0#78"/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/en.lproj/MainWindow.xib8627804416#644"    cd /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app/en.lproj/MainWindow.nib /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/en.lproj/MainWindow.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
-
-CCopyStringsFile /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app/en.lproj/Localizable.strings en.lproj/Localizable.strings
-s314125445.576185
-e314125446.246474
-r1
-xCopyStringsFile
-x/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app/en.lproj/Localizable.strings
-xen.lproj/Localizable.strings
-lSLF07#2@33"Copy en.lproj/Localizable.strings314125445#314125446#0(0"0(0#0#83"/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/en.lproj/Localizable.strings8627867008#526"    cd /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView    setenv ICONV /usr/bin/iconv    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings --validate --inputencoding utf-16 --outputencoding binary en.lproj/Localizable.strings --outdir /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app/en.lproj0#
-
-CCpResource build/Debug-iphonesimulator/SimpleTableView.app/Default.png images/Default.png
-s314125446.246574
-e314125446.342557
-r1
-xCpResource
-xbuild/Debug-iphonesimulator/SimpleTableView.app/Default.png
-ximages/Default.png
-lSLF07#2@23"Copy images/Default.png314125446#314125446#0(0"0(0#0#73"/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/images/Default.png8628320800#518"    cd /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/images/Default.png /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app0#
-
-CCpResource build/Debug-iphonesimulator/SimpleTableView.app/Icon-72.png images/Icon-72.png
-s314125446.248120
-e314125446.343662
-r1
-xCpResource
-xbuild/Debug-iphonesimulator/SimpleTableView.app/Icon-72.png
-ximages/Icon-72.png
-lSLF07#2@23"Copy images/Icon-72.png314125446#314125446#0(0"0(0#0#73"/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/images/Icon-72.png8627960000#518"    cd /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/images/Icon-72.png /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app0#
-
-CCpResource build/Debug-iphonesimulator/SimpleTableView.app/Icon-Small-50.png images/Icon-Small-50.png
-s314125446.251183
-e314125446.342796
-r1
-xCpResource
-xbuild/Debug-iphonesimulator/SimpleTableView.app/Icon-Small-50.png
-ximages/Icon-Small-50.png
-lSLF07#2@29"Copy images/Icon-Small-50.png314125446#314125446#0(0"0(0#0#79"/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/images/Icon-Small-50.png8627735136#524"    cd /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/images/Icon-Small-50.png /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app0#
-
-CCpResource build/Debug-iphonesimulator/SimpleTableView.app/Icon-Small.png images/Icon-Small.png
-s314125446.253305
-e314125446.343047
-r1
-xCpResource
-xbuild/Debug-iphonesimulator/SimpleTableView.app/Icon-Small.png
-ximages/Icon-Small.png
-lSLF07#2@26"Copy images/Icon-Small.png314125446#314125446#0(0"0(0#0#76"/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/images/Icon-Small.png8627567360#521"    cd /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/images/Icon-Small.png /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app0#
-
-CCpResource build/Debug-iphonesimulator/SimpleTableView.app/Icon-Small@2x.png images/Icon-Small@2x.png
-s314125446.254425
-e314125446.343262
-r1
-xCpResource
-xbuild/Debug-iphonesimulator/SimpleTableView.app/Icon-Small@2x.png
-ximages/Icon-Small@2x.png
-lSLF07#2@29"Copy images/Icon-Small@2x.png314125446#314125446#0(0"0(0#0#79"/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/images/Icon-Small@2x.png8627496000#524"    cd /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/images/Icon-Small@2x.png /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app0#
-
-CCpResource build/Debug-iphonesimulator/SimpleTableView.app/Icon.png images/Icon.png
-s314125446.256582
-e314125446.335469
-r1
-xCpResource
-xbuild/Debug-iphonesimulator/SimpleTableView.app/Icon.png
-ximages/Icon.png
-lSLF07#2@20"Copy images/Icon.png314125446#314125446#0(0"0(0#0#70"/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/images/Icon.png8627379424#515"    cd /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/images/Icon.png /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app0#
-
-CCpResource build/Debug-iphonesimulator/SimpleTableView.app/Icon@2x.png images/Icon@2x.png
-s314125446.258909
-e314125446.343429
-r1
-xCpResource
-xbuild/Debug-iphonesimulator/SimpleTableView.app/Icon@2x.png
-ximages/Icon@2x.png
-lSLF07#2@23"Copy images/Icon@2x.png314125446#314125446#0(0"0(0#0#73"/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/images/Icon@2x.png8627272064#518"    cd /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/images/Icon@2x.png /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app0#
-
-CCpResource build/Debug-iphonesimulator/SimpleTableView.app/iTunesArtwork images/iTunesArtwork
-s314125446.262605
-e314125446.331634
-r1
-xCpResource
-xbuild/Debug-iphonesimulator/SimpleTableView.app/iTunesArtwork
-ximages/iTunesArtwork
-lSLF07#2@25"Copy images/iTunesArtwork314125446#314125446#0(0"0(0#0#75"/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/images/iTunesArtwork8627132352#520"    cd /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/images/iTunesArtwork /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app0#
-
-CGenerateDSYMFile /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app.dSYM /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app/SimpleTableView
-s314125451.139733
-e314125451.187145
-r1
-xGenerateDSYMFile
-x/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app.dSYM
-x/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app/SimpleTableView
-lSLF07#2@133"GenerateDSYMFile build/Debug-iphonesimulator/SimpleTableView.app.dSYM build/Debug-iphonesimulator/SimpleTableView.app/SimpleTableView314125451#314125451#0(0"0(0#0#118"/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app/SimpleTableView8626457696#455"    cd /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app/SimpleTableView -o /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app.dSYM0#
-
-CLd /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app/SimpleTableView normal i386
-s314125450.762826
-e314125451.139630
-r1
-xLd
-x/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app/SimpleTableView
-xnormal
-xi386
-lSLF07#2@123"Link /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app/SimpleTableView314125450#314125451#0(0"0(0#0#0"8627760192#1020"    cd /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -L/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator -F/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator -filelist /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/SimpleTableView.build/Debug-iphonesimulator/SimpleTableView.build/Objects-normal/i386/SimpleTableView.LinkFileList -mmacosx-version-min=10.6 -Xlinker -objc_abi_version -Xlinker 2 -framework Foundation -framework UIKit -framework CoreGraphics -o /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app/SimpleTableView0#
-
-CProcessInfoPlistFile /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app/Info.plist Info.plist
-s314125445.570831
-e314125445.576077
-r1
-xProcessInfoPlistFile
-x/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app/Info.plist
-xInfo.plist
-lSLF07#2@18"Process Info.plist314125445#314125445#0(0"0(0#0#65"/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/Info.plist8628253920#535"    cd /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility Info.plist -genpkginfo /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app/Info.plist0#
-
-CProcessPCH /var/folders/n8/n8QVMtgmFKSsOI5TOhStA++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/SimpleTableView_Prefix-byaormzgqsftueajlqggjwavvhcn/SimpleTableView_Prefix.pch.gch SimpleTableView_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
-s314125448.623959
-e314125450.523868
-r1
-xProcessPCH
-x/var/folders/n8/n8QVMtgmFKSsOI5TOhStA++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/SimpleTableView_Prefix-byaormzgqsftueajlqggjwavvhcn/SimpleTableView_Prefix.pch.gch
-xSimpleTableView_Prefix.pch
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@37"Precompile SimpleTableView_Prefix.pch314125448#314125450#0(0"0(0#0#81"/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/SimpleTableView_Prefix.pch8625389056#2159"    cd /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/SimpleTableView.build/Debug-iphonesimulator/SimpleTableView.build/SimpleTableView-generated-files.hmap -I/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/SimpleTableView.build/Debug-iphonesimulator/SimpleTableView.build/SimpleTableView-own-target-headers.hmap -I/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/SimpleTableView.build/Debug-iphonesimulator/SimpleTableView.build/SimpleTableView-all-target-headers.hmap -iquote /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/SimpleTableView.build/Debug-iphonesimulator/SimpleTableView.build/SimpleTableView-project-headers.hmap -F/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator -I/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/include -I/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/SimpleTableView.build/Debug-iphonesimulator/SimpleTableView.build/DerivedSources/i386 -I/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/SimpleTableView.build/Debug-iphonesimulator/SimpleTableView.build/DerivedSources -c /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/SimpleTableView_Prefix.pch -o /var/folders/n8/n8QVMtgmFKSsOI5TOhStA++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/SimpleTableView_Prefix-byaormzgqsftueajlqggjwavvhcn/SimpleTableView_Prefix.pch.gch0#
-
-CTouch /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app
-s314125451.187233
-e314125451.206712
-r1
-xTouch
-x/Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app
-lSLF07#2@108"Touch /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app314125451#314125451#0(0"0(0#0#0"8626310336#318"    cd /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/varjunan/cocoa/TableViewSuite/1_SimpleTableView/build/Debug-iphonesimulator/SimpleTableView.app0#
-

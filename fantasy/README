@@ -1,4 +1,0 @@
-Shows the usage of Velocity Templating system and how we can use it from JAVA classes.
-Needs two more Velocity JAR files
-( compiled and tested with velocity-1.7-dep.jar and velocity-1.7.jar )
-
