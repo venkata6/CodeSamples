@@ -7,10 +7,10 @@ import java.util.*;
 // wrote from the pseudo-code from the tutorial 
 // http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=graphsDataStrucs2
 
-class Node {
+class Node1 {
 
     public int x,y;
-    Node(int x,int y) { this.x=x; this.y=y;} 
+    Node1(int x,int y) { this.x=x; this.y=y;}
 
 }
 
@@ -86,7 +86,7 @@ public class GridExample {
 	s.push(new Node(x, y));
 
 	while (s.isEmpty() == false) {
-	    Node top = (Node) s.peek();
+	    Node1 top = (Node1) s.peek();
 	    s.pop();
 
 	    // Check to ensure that we are within the bounds of the grid, if not, continue

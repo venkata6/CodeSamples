@@ -47,5 +47,15 @@ fabric.properties
 # Emacs backup files
 *.*~
 
-./.DS_Store
-./python/.DS_Store
+*/*/.DS_Store
+*/python/.DS_Store
+
+
+*target*
+*.jar
+*.war
+*.ear
+*/*/.class
+*/JavaCodingProblems/out/production/CodeSamples/src/*.class
+*/JavaCodingProblems/out/production/CodeSamples/puzzle/*.class
+*/JavaCodingProblems/out/production/CodeSamples/*.class
