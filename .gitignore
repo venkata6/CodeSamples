@@ -49,7 +49,7 @@ fabric.properties
 
 */*/.DS_Store
 */python/.DS_Store
-
+.DS_Store
 
 *target*
 *.jar
