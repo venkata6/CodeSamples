@@ -1,5 +1,0 @@
-// ---------- WYSIWYGPRESENTATION.ASP: 1 , first removes the horizontal lines, 2nd delimits by ":" and if the # is 0, ignores it
-cat YIVAdmin.txt | awk '{print $2 $3}' | awk -F":" '{if ($2 != 0) print $1  " "  $2}' > YIVAdmin1.txt
-
-// removed the blank lines or blank lines with space
-sed '/^ $/d' YIVAdmin1.txt > YIVAdmin.txt
