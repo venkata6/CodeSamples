@@ -1,0 +1,186 @@
+package com.roku.server.channelfeed.util;
+
+
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.benmanes.caffeine.cache.Cache;
+import com.github.benmanes.caffeine.cache.Caffeine;
+import com.github.benmanes.caffeine.cache.RemovalCause;
+import com.github.benmanes.caffeine.cache.RemovalListener;
+import com.roku.channelfeed.wire.client.request.CaffeineCacheFlush;
+import com.roku.dynaconf.DynaConf;
+import org.apache.kafka.clients.consumer.ConsumerRecord;
+import org.apache.kafka.clients.consumer.ConsumerRecords;
+import org.apache.kafka.clients.consumer.KafkaConsumer;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.checkerframework.checker.nullness.qual.NonNull;
+import org.checkerframework.checker.nullness.qual.Nullable;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+import javax.annotation.PreDestroy;
+import java. net. InetAddress;
+
+import java.net.UnknownHostException;
+import java.time.Duration;
+import java.util.Arrays;
+import java.util.Properties;
+import java.util.UUID;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+
+@Component
+public class CaffeineCacheWrapper<K,V> {
+    private final Cache<K, V> cache;
+    private static final Logger LOGGER = LogManager.getLogger(CaffeineCacheWrapper.class);
+    private final ObjectMapper objectMapper = new ObjectMapper();
+    private final DynaConf dynaConf;
+    private final String ENABLE_CAFFEINE = "cache.caffeine.enable";
+    private String hostIPAddress;
+    private String kafkaBootstrapServer;
+    private String localCacheTopic;
+    private KafkaConsumer<String,String> kafkaConsumer ;
+    private final ExecutorService executerServiceForLocalCacheFlush;
+    private int ttl;
+    private int countOfObjectToCache;
+
+
+    @Autowired
+    public CaffeineCacheWrapper(final DynaConf dynaConf, @Value("${rsf.kafka.common.bootstrap.servers}") String kafkaBootstrapServer,
+                                @Value("${channelfeedsvc.localcache.kafka.topic}") String kafkaTopic) {
+        this.dynaConf=dynaConf;
+
+        this.ttl = dynaConf.getInt("cache.caffeine.ttl.minutes",60);
+        this.countOfObjectToCache = dynaConf.getInt("cache.caffeine.objects.count",500);
+
+        this.kafkaBootstrapServer = kafkaBootstrapServer;
+        this.localCacheTopic = kafkaTopic;
+        this.cache = Caffeine.newBuilder()
+                .expireAfterWrite( this.ttl , TimeUnit.MINUTES)   //
+                .maximumSize(this.countOfObjectToCache)
+                .recordStats()    // enable stats
+                .removalListener(new ChannelRemovalListener())
+                .build();
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        try {
+            kafkaConsumer = getKafkaConsumer();
+        } catch ( Exception e ){  // since Kafka is nice to have, this error if it happens , is ok and we will go on with object creation
+            LOGGER.error("Getting the IP address threw error  {} " , e);
+        }
+        this.executerServiceForLocalCacheFlush = Executors.newFixedThreadPool(dynaConf.getInt("channelfeedsvc.localcache.flush.threads",1));
+        Runnable localCacheFlushTask = () ->consumeCaffeineCacheFlushMessage();
+        this.executerServiceForLocalCacheFlush.execute(localCacheFlushTask);
+    }
+    public V getIfPresent ( K key ) {
+        try {
+            if (dynaConf.getBoolean(ENABLE_CAFFEINE, false)) {
+                return cache.getIfPresent(String.valueOf(key));
+            }else {  // local cache not enabled
+                return  null;
+            }
+        } catch ( Exception e ) {  // catch the exception and treat as 'cache-miss'
+            LOGGER.error("Caffeine cache - get error {} - {} ", key, e);
+            return null;
+        }
+    }
+    public boolean put ( K key, V value ) {
+        try {
+            if (dynaConf.getBoolean(ENABLE_CAFFEINE, false)) {
+                cache.put(key, value);
+                return true;
+            } else { // dont store in cache
+                return false;
+            }
+        } catch ( Exception e) {
+            LOGGER.error("Caffeine cache - put error {} - {} - {} ", key, value, e);
+            return  false ;
+        }
+    }
+    public String getStats() {
+        return "hitCount = " + cache.stats().hitCount() + "; " +
+                "miss Count = " + cache.stats().missCount()  + "; " +
+                "hitRate = " + cache.stats().hitRate() + "; " +
+                "miss rate = " + cache.stats().missRate() ;
+
+
+    }
+    public void consumeCaffeineCacheFlushMessage() {
+        CaffeineCacheFlush caffeineCacheFlush = null;
+        kafkaConsumer.subscribe(Arrays.asList(localCacheTopic));
+        while (true ) {
+              ConsumerRecords<String, String> records = kafkaConsumer.poll(Duration.ofDays(1000));
+              for (ConsumerRecord<String,String> record : records ) {
+                LOGGER.debug("channel message received {} at host {} ", record.value(), hostIPAddress);
+                  try {
+                      LOGGER.debug("CaffeineCacheFlush: going to unmarshall ... ");
+                      caffeineCacheFlush = objectMapper.readValue(record.value(), CaffeineCacheFlush.class);
+                      if (caffeineCacheFlush != null && caffeineCacheFlush.getPayLoad() != null) {
+                          LOGGER.debug("CaffeineCacheFlush: after unmarshall " + caffeineCacheFlush.getPayLoad());
+                      } else {
+                          LOGGER.debug("CaffeineCacheFlush: after unmarshall caffeineCacheFlush is null {} ",caffeineCacheFlush.getPayLoad());
+                      }
+
+                  }catch( final Exception e){
+                      LOGGER.error("CaffeineCacheFlush: Exception while deleting channelID {} from local cache  from Kafka", caffeineCacheFlush, e);
+
+                  }
+                  if (caffeineCacheFlush != null && caffeineCacheFlush.getPayLoad()!= null && caffeineCacheFlush.getPayLoad().length > 0) {
+                      {
+                          for ( int channelId : caffeineCacheFlush.getPayLoad() ) {
+                              LOGGER.info("CaffeineCacheFlush: invalidating channelID {} from local cache  ",String.valueOf(channelId) );
+                              invalidateCacheForChannel(channelId);
+                          }
+                      }
+                }
+
+            }
+            kafkaConsumer.commitSync();
+        }
+    }
+
+    public void invalidateCacheForChannel(int channelId) {
+        this.cache.invalidate(String.valueOf(channelId));
+    }
+
+    public void invalidateCacheForAlgorithmicCategory(String algoLocalCacheKeySuffix) {
+        this.cache.invalidate( CacheKey.CHANNEL_FEED_ALGO_TYPE.getKey() + "_" + algoLocalCacheKeySuffix);
+    }
+
+    private KafkaConsumer<String, String> getKafkaConsumer() throws UnknownHostException {
+        UUID randomGroupID = UUID.randomUUID();
+        Properties config = new Properties();
+        hostIPAddress = InetAddress.getLocalHost().getHostName();
+        config.setProperty("client.id",hostIPAddress );
+        config.setProperty("group.id", randomGroupID.toString());
+        config.setProperty("bootstrap.servers",kafkaBootstrapServer);
+        config.setProperty("enable.auto.commit", "true");
+        config.setProperty("auto.commit.interval.ms", "1000");
+        config.setProperty("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
+        config.setProperty("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
+        return new KafkaConsumer<>(config);
+    }
+
+    @PreDestroy
+    public void preDestroy() {
+        executerServiceForLocalCacheFlush.shutdown();
+        try {
+            if (!executerServiceForLocalCacheFlush.awaitTermination(dynaConf.getInt("channelfeedsvc.executor.shutdown.wait.time.msec",800), TimeUnit.MILLISECONDS)) {
+                executerServiceForLocalCacheFlush.shutdownNow();
+            }
+        } catch (InterruptedException e) {
+            executerServiceForLocalCacheFlush.shutdownNow();
+        }
+
+    }
+    class ChannelRemovalListener implements RemovalListener<K, V> {
+        @Override
+        public void onRemoval(@Nullable K key, @Nullable V value, @NonNull RemovalCause cause){
+            if ( dynaConf.getBoolean("enable.local.cache.debug",false)) {
+                LOGGER.error("key=%s, value=%s cause=%s", key, value, cause.name());
+            }
+        }
+    }
+}
