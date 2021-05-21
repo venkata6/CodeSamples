@@ -1,0 +1,31 @@
+package com.roku.server.authsvc.restclients;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
+
+import java.util.Map;
+
+@Component
+public class CircuitBreakerScheduler {
+    private Map<String, CircuitBreaker> m ;
+
+    CircuitBreakerScheduler() {
+        m = PartnerAPIClient.getCircuitBreakerMap();
+    }
+
+    // wakeup every minute
+    @Scheduled(fixedRate = 1000*60)
+    public void checkState() {
+        synchronized (this) {
+            for (CircuitBreaker cb : m.values()) {
+                cb.setThreshold(0);
+                if (cb.getState() == CircuitBreaker.State.OPEN) {
+                    cb.setHalfOpen();
+                }
+            }
+
+        }
+    }
+
+}
